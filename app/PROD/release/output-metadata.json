@@ -13,4 +13,8 @@
       "properties": [],
       "versionCode": 3,
       "versionName": "1.2",
-    
+      "enabled": true,
+      "outputFile": "app-PROD-release.apk"
+    }
+  ]
+}

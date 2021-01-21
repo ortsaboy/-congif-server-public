@@ -22,4 +22,10 @@ class EventersAlgorandBlockchainApplication : Application(), KodeinAware {
 
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { ApiInterface(instance()) }
-   
+        bind() from singleton { BlogApiInterface(instance()) }
+        bind() from singleton { SignupRepository(instance()) }
+        bind() from provider { SignupViewModelFactory(instance()) }
+        bind() from singleton { PhoneOTPRepository(instance()) }
+        bind() from provider { PhoneOTPViewModelFactory(instance()) }
+        bind() from singleton { ProfileRepository(instance(), instance()) }
+        

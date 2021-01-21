@@ -28,4 +28,13 @@ class EventersAlgorandBlockchainApplication : Application(), KodeinAware {
         bind() from singleton { PhoneOTPRepository(instance()) }
         bind() from provider { PhoneOTPViewModelFactory(instance()) }
         bind() from singleton { ProfileRepository(instance(), instance()) }
-        
+        bind() from provider { ProfileViewModelFactory(instance()) }
+        bind() from singleton {
+            BlogRepository(
+                instance()
+            )
+        }
+        bind() from provider { BlogViewModelFactory(instance()) }
+        bind() from singleton { CreateEventRepository(instance()) }
+        bind() from provider { CreateEventViewModelFactory(instance()) }
+ 

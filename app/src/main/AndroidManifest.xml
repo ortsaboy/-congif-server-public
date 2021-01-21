@@ -48,3 +48,12 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.splash.Walkthrough"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar1" />
+        <activity
+            android:name=".HostActivity"
+            android:configChanges="keyboardHidden|orientation|scree

@@ -56,4 +56,10 @@
             android:theme="@style/AppTheme.NoActionBar1" />
         <activity
             android:name=".HostActivity"
-            android:configChanges="keyboardHidden|orientation|scree
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label=""
+            android:theme="@style/DashboardTheme"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

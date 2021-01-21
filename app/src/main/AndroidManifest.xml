@@ -39,4 +39,12 @@
 
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
-        </act
+        </activity>
+        <activity
+            android:name=".ui.splash.SplashScreen"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>

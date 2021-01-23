@@ -37,4 +37,9 @@ class EventersAlgorandBlockchainApplication : Application(), KodeinAware {
         bind() from provider { BlogViewModelFactory(instance()) }
         bind() from singleton { CreateEventRepository(instance()) }
         bind() from provider { CreateEventViewModelFactory(instance()) }
- 
+        bind() from singleton { MyEventRepository(instance()) }
+        bind() from provider { MyEventViewModelFactory(instance()) }
+        bind() from singleton { AllEventRepository(instance()) }
+        bind() from provider { AllEventViewModelFactory(instance()) }
+        bind() from singleton { ResellOrSendEventRepository(instance()) }
+        bind() from provider { ResellOrSendEventViewModelFactory(insta

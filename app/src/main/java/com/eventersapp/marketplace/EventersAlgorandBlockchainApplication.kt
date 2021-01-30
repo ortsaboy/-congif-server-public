@@ -42,4 +42,10 @@ class EventersAlgorandBlockchainApplication : Application(), KodeinAware {
         bind() from singleton { AllEventRepository(instance()) }
         bind() from provider { AllEventViewModelFactory(instance()) }
         bind() from singleton { ResellOrSendEventRepository(instance()) }
-        bind() from provider { ResellOrSendEventViewModelFactory(insta
+        bind() from provider { ResellOrSendEventViewModelFactory(instance()) }
+        bind() from singleton { BuyEventRepository(instance()) }
+        bind() from provider { BuyEventViewModelFactory(instance()) }
+        bind() from provider { AppDatabase(instance()) }
+        bind() from singleton { AccountDetailsRepository(instance()) }
+        bind() from provider { AccountDetailsViewModelFactory(instance()) }
+        bind() from singleton { AccountSettingsRepository(ins

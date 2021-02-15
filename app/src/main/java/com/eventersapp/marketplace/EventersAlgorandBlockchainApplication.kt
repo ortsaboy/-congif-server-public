@@ -48,4 +48,10 @@ class EventersAlgorandBlockchainApplication : Application(), KodeinAware {
         bind() from provider { AppDatabase(instance()) }
         bind() from singleton { AccountDetailsRepository(instance()) }
         bind() from provider { AccountDetailsViewModelFactory(instance()) }
-        bind() from singleton { AccountSettingsRepository(ins
+        bind() from singleton { AccountSettingsRepository(instance()) }
+        bind() from provider { AccountSettingsViewModelFactory(instance()) }
+        bind() from singleton { RecoverPassphraseRepository(instance()) }
+        bind() from provider { RecoverPassphraseViewModelFactory(instance()) }
+    }
+
+}

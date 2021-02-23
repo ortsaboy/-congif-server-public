@@ -14,4 +14,7 @@ object DatabaseMigrations {
 
     private fun migration(): Migration = object : Migration(1, 2) {
         override fun migrate(database: SupportSQLiteDatabase) {
-           
+            database.execSQL("ALTER TABLE ${Account.TABLE_NAME} ADD COLUMN body TEXT")
+        }
+    }
+}

@@ -12,4 +12,13 @@ interface AccountsDao {
     @Query("DELETE FROM ${Account.TABLE_NAME}")
     suspend fun deleteAllTableRecords()
 
-    @Query("SELECT 
+    @Query("SELECT * FROM ${Account.TABLE_NAME} WHERE ID = :accountId")
+    suspend fun fetchAccountById(accountId: Int): Account
+
+    @Query("SELECT * FROM ${Account.TABLE_NAME} WHERE accountAddress = :accountAddress")
+    suspend fun fetchAccountByAddress(accountAddress: String): Account?
+
+    @Query("SELECT * FROM ${Account.TABLE_NAME} WHERE isSelected = 1")
+    suspend fun fetchAccountBySelectedValue(): Account
+
+    @Que

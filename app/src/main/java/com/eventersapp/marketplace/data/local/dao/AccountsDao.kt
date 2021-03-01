@@ -31,4 +31,10 @@ interface AccountsDao {
     suspend fun updateIsSelectedColumn()
 
     @Update
-    suspe
+    suspend fun updateAccount(account: Account): Int
+
+    @Delete
+    suspend fun deleteAccount(account: Account): Int
+
+
+}

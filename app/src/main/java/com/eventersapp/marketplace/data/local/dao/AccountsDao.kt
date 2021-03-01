@@ -21,4 +21,14 @@ interface AccountsDao {
     @Query("SELECT * FROM ${Account.TABLE_NAME} WHERE isSelected = 1")
     suspend fun fetchAccountBySelectedValue(): Account
 
-    @Que
+    @Query("SELECT * FROM ${Account.TABLE_NAME} WHERE passphrase = :passphrase")
+    suspend fun fetchAccountByPassphrase(passphrase: String): Account?
+
+    @Query("SELECT * FROM ${Account.TABLE_NAME} ORDER BY ID")
+    suspend fun fetchAllAccount(): List<Account>
+
+    @Query("UPDATE ${Account.TABLE_NAME} SET isSelected = 0")
+    suspend fun updateIsSelectedColumn()
+
+    @Update
+    suspe

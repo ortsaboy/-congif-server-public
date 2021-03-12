@@ -34,4 +34,14 @@ data class AllEventListResponse(
         @Keep
         data class PublicEvent(
             @SerializedName("date_time")
-            val dateTime: String
+            val dateTime: String,
+            @SerializedName("event_description")
+            val eventDescription: String,
+            @SerializedName("event_image")
+            val eventImage: String,
+            @SerializedName("event_title")
+            val eventTitle: String,
+            @SerializedName("public_event_id")
+            val publicEventId: Int,
+            @SerializedName("ticket_price")
+            val ticketP

@@ -18,4 +18,21 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHE
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package com.eventersapp.marketplace.data.model
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.eventersapp.marketplace.data.model.Account.Companion.TABLE_NAME
+import java.io.Serializable
+
+/**
+ * Data class for Database entity and Serialization.
+ */
+@Entity(tableName = TABLE_NAME)
+data class Account(
+    var name: String? = null,
+    va

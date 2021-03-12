@@ -35,4 +35,14 @@ import java.io.Serializable
 @Entity(tableName = TABLE_NAME)
 data class Account(
     var name: String? = null,
-    va
+    var accountAddress: String? = null,
+    var passphrase: String? = null,
+    var isSelected: Boolean? = null
+) : Serializable {
+    companion object {
+        const val TABLE_NAME = "accounts"
+    }
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+}

@@ -21,4 +21,17 @@ data class AllEventListResponse(
 
         @Keep
         data class EventTicket(
-            @SerializedNam
+            @SerializedName("event_ticket_id")
+            val eventTicketId: Int,
+            @SerializedName("price")
+            val price: Int,
+            @SerializedName("public_event_id")
+            val publicEventId: Int,
+            @SerializedName("status")
+            val status: String
+        ) : Serializable
+
+        @Keep
+        data class PublicEvent(
+            @SerializedName("date_time")
+            val dateTime: String

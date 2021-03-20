@@ -44,4 +44,9 @@ data class AllEventListResponse(
             @SerializedName("public_event_id")
             val publicEventId: Int,
             @SerializedName("ticket_price")
-            val ticketP
+            val ticketPrice: Int,
+            @SerializedName("total_tickets")
+            val totalTickets: Int
+        ) : Serializable
+    }
+}

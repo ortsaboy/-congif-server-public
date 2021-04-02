@@ -20,4 +20,24 @@ class BuyResellTicketEventPostBody {
         var authType: String? = null
 
         @SerializedName("device_id")
-        var deviceId: String
+        var deviceId: String? = null
+
+        @SerializedName("token_id")
+        var tokenId: String? = null
+
+        @SerializedName("user_id")
+        var userId = 0
+
+        @SerializedName("push_key")
+        var pushKey: String? = null
+
+    }
+
+    inner class Ticket {
+        @SerializedName("public_event_id")
+        var publicEventId = 0
+
+        @SerializedName("event_ticket_id")
+        var eventTicketId = 0
+
+        @

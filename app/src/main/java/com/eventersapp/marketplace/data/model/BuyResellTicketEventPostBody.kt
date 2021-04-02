@@ -40,4 +40,9 @@ class BuyResellTicketEventPostBody {
         @SerializedName("event_ticket_id")
         var eventTicketId = 0
 
-        @
+        @SerializedName("to_user_id")
+        var toUserId = 0
+
+    }
+
+}

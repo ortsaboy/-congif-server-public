@@ -12,4 +12,18 @@ data class BuyTicketEventResponse(
     @Keep
     data class Data(
         @SerializedName("auth")
-        val auth
+        val auth: Auth,
+        @SerializedName("public_event")
+        val publicEvent: PublicEvent
+    ) {
+        @Keep
+        data class Auth(
+            @SerializedName("push_key")
+            val pushKey: String
+        )
+
+        @Keep
+        data class PublicEvent(
+            @SerializedName("date_time")
+            val dateTime: String,
+            @Serializ

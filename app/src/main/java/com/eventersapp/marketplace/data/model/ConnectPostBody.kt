@@ -32,4 +32,20 @@ class ConnectPostBody {
         @SerializedName("phone_country_code")
         var phoneCountryCode: String? = null
 
-        @SerializedName("provide
+        @SerializedName("provider")
+        var provider: String? = null
+
+        @SerializedName("phone_number")
+        var phoneNumber: String? = null
+
+        @SerializedName("phone_firebase_id")
+        var phoneFirebaseId: String? = null
+
+        @SerializedName("g_firebase_id")
+        var gFirebaseId: String? = null
+
+        @SerializedName("g_email")
+        var gEmail: String? = null
+
+        @SerializedName("g_name")
+       

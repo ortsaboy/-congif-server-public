@@ -14,4 +14,16 @@ data class ConnectResponse(
         @SerializedName("user")
         val user: User,
         @SerializedName("auth")
-        
+        val auth: Auth
+    ) {
+        @Keep
+        data class User(
+            @SerializedName("address")
+            val address: String,
+            @SerializedName("city")
+            val city: String,
+            @SerializedName("country")
+            val country: String,
+            @SerializedName("display_name")
+            val displayName: String,
+            @SerializedName("email_

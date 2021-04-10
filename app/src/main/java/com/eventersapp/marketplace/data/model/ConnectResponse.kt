@@ -26,4 +26,14 @@ data class ConnectResponse(
             val country: String,
             @SerializedName("display_name")
             val displayName: String,
-            @SerializedName("email_
+            @SerializedName("email_address")
+            val emailAddress: String,
+            @SerializedName("fb_email")
+            val fbEmail: String,
+            @SerializedName("fb_firebase_id")
+            val fbFirebaseId: String,
+            @SerializedName("fb_image_url")
+            val fbImageUrl: String,
+            @SerializedName("fb_name")
+            val fbName: String,
+  

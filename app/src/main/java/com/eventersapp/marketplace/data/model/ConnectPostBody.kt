@@ -16,4 +16,20 @@ class ConnectPostBody {
 
     inner class Auth {
         @SerializedName("device_provider")
-        var
+        var deviceProvider: String? = null
+
+        @SerializedName("device_id")
+        var deviceId: String? = null
+
+        @SerializedName("token_id")
+        var tokenId: String? = null
+
+        @SerializedName("fcm_token")
+        var fcmToken: String? = null
+    }
+
+    inner class User {
+        @SerializedName("phone_country_code")
+        var phoneCountryCode: String? = null
+
+        @SerializedName("provide

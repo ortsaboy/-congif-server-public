@@ -48,4 +48,18 @@ class ConnectPostBody {
         var gEmail: String? = null
 
         @SerializedName("g_name")
-       
+        var gName: String? = null
+
+        @SerializedName("g_image_url")
+        var gImageUrl: String? = null
+
+        @SerializedName("fb_firebase_id")
+        var fbFirebaseId: String? = null
+
+        @SerializedName("fb_email")
+        var fbEmail: String? = null
+
+        @SerializedName("fb_name")
+        var fbName: String? = null
+
+        @SerializedName("fb

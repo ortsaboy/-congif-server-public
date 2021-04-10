@@ -62,4 +62,8 @@ class ConnectPostBody {
         @SerializedName("fb_name")
         var fbName: String? = null
 
-        @SerializedName("fb
+        @SerializedName("fb_image_url")
+        var fbImageUrl: String? = null
+
+    }
+}

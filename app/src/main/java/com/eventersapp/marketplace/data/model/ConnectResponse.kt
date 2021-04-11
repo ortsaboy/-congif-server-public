@@ -46,3 +46,13 @@ data class ConnectResponse(
             val gImageUrl: String,
             @SerializedName("g_name")
             val gName: String,
+            @SerializedName("last_name")
+            val lastName: String,
+            @SerializedName("phone_country_code")
+            val phoneCountryCode: String,
+            @SerializedName("phone_firebase_id")
+            val phoneFirebaseId: String,
+            @SerializedName("phone_number")
+            val phoneNumber: String,
+            @SerializedName("pincode")
+            val pincode: St

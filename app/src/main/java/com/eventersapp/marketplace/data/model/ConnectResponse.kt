@@ -69,4 +69,9 @@ data class ConnectResponse(
         @Keep
         data class Auth(
             @SerializedName("status")
-            val s
+            val status: String
+        )
+
+    }
+}
+

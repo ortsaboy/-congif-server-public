@@ -55,4 +55,18 @@ data class ConnectResponse(
             @SerializedName("phone_number")
             val phoneNumber: String,
             @SerializedName("pincode")
-            val pincode: St
+            val pincode: String,
+            @SerializedName("profile_pic")
+            val profilePic: String,
+            @SerializedName("provider")
+            val provider: String,
+            @SerializedName("state")
+            val state: String,
+            @SerializedName("user_id")
+            val userId: String
+        )
+
+        @Keep
+        data class Auth(
+            @SerializedName("status")
+            val s

@@ -25,4 +25,12 @@ class LogoutPostBody {
         var tokenId: String? = null
 
         @SerializedName("user_id")
-        var userId: Int? =
+        var userId: Int? = null
+    }
+
+    inner class UserDevice {
+        @SerializedName("is_valid")
+        var isValid: Boolean? = null
+
+    }
+}

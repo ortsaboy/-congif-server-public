@@ -20,4 +20,17 @@ data class MyEventListResponse(
         @Keep
         data class EventTicket(
             @SerializedName("event_ticket_id")
-            val eventTicketI
+            val eventTicketId: Int,
+            @SerializedName("price")
+            val price: Int,
+            @SerializedName("public_event_id")
+            val publicEventId: Int,
+            @SerializedName("status")
+            val status: String
+        ) : Serializable
+
+        @Keep
+        data class PublicEvent(
+            @SerializedName("date_time")
+            val dateTime: String,
+            @SerializedName("event_de

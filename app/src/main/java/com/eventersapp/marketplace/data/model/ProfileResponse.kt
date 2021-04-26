@@ -28,4 +28,14 @@ data class ProfileResponse(
             val fbEmail: String,
             @SerializedName("g_email")
             val gEmail: String,
-            
+            @SerializedName("g_firebase_id")
+            val gFirebaseId: String,
+            @SerializedName("g_image_url")
+            val gImageUrl: String,
+            @SerializedName("g_name")
+            val gName: String,
+            @SerializedName("phone_country_code")
+            val phoneCountryCode: String,
+            @SerializedName("phone_number")
+            val phoneNumber: String,
+           

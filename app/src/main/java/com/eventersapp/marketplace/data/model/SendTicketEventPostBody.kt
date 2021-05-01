@@ -1,8 +1,9 @@
+
 package com.eventersapp.marketplace.data.model
 
 import com.google.gson.annotations.SerializedName
 
-class ResellTicketEventPostBody {
+class SendTicketEventPostBody {
     @SerializedName("data")
     var data: Data? = null
 
@@ -18,11 +19,14 @@ class ResellTicketEventPostBody {
         @SerializedName("event_ticket_id")
         var eventTicketId = 0
 
-        @SerializedName("status")
-        var status: String? = null
+        @SerializedName("public_event_id")
+        var publicEventId = 0
 
-        @SerializedName("price_to_resell")
-        var priceToResell = 0
+        @SerializedName("to_user_id")
+        var toUserId = 0
+
+        @SerializedName("from_user_id")
+        var fromUserId = 0
     }
 
     inner class Auth {
@@ -40,5 +44,3 @@ class ResellTicketEventPostBody {
 
         @SerializedName("push_key")
         var pushKey: String? = null
-    }
-}

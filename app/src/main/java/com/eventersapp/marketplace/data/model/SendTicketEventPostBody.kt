@@ -44,3 +44,5 @@ class SendTicketEventPostBody {
 
         @SerializedName("push_key")
         var pushKey: String? = null
+    }
+}

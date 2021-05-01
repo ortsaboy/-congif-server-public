@@ -38,4 +38,10 @@ data class ProfileResponse(
             val phoneCountryCode: String,
             @SerializedName("phone_number")
             val phoneNumber: String,
-           
+            @SerializedName("provider")
+            val provider: String,
+            @SerializedName("user_id")
+            val userId: Int
+        )
+    }
+}

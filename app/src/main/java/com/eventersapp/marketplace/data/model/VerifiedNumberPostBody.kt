@@ -11,4 +11,21 @@ class VerifiedNumberPostBody {
         var auth: Auth? = null
 
         @SerializedName("user")
-        var user: U
+        var user: User? = null
+    }
+
+    inner class Auth {
+        @SerializedName("device_provider")
+        var deviceProvider: String? = null
+
+        @SerializedName("device_id")
+        var deviceId: String? = null
+
+        @SerializedName("token_id")
+        var tokenId: String? = null
+
+        @SerializedName("fcm_token")
+        var fcmToken: String? = null
+    }
+
+    inner class

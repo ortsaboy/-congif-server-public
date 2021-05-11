@@ -42,4 +42,7 @@ class VerifiedNumberPostBody {
         var phoneFirebaseId: String? = null
 
         @SerializedName("user_id")
-        var userId: Int? = 
+        var userId: Int? = null
+
+    }
+}

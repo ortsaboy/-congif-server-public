@@ -28,4 +28,18 @@ class VerifiedNumberPostBody {
         var fcmToken: String? = null
     }
 
-    inner class
+    inner class User {
+        @SerializedName("phone_country_code")
+        var phoneCountryCode: String? = null
+
+        @SerializedName("provider")
+        var provider: String? = null
+
+        @SerializedName("phone_number")
+        var phoneNumber: String? = null
+
+        @SerializedName("phone_firebase_id")
+        var phoneFirebaseId: String? = null
+
+        @SerializedName("user_id")
+        var userId: Int? = 

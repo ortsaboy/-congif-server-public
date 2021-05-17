@@ -16,4 +16,15 @@ data class VerifiedNumberResponse(
     ) {
         @Keep
         data class User(
-            @Serialize
+            @SerializedName("address")
+            val address: String,
+            @SerializedName("city")
+            val city: String,
+            @SerializedName("country")
+            val country: String,
+            @SerializedName("display_name")
+            val displayName: String,
+            @SerializedName("email_address")
+            val emailAddress: String,
+            @SerializedName("fb_email")
+  

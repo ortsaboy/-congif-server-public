@@ -27,4 +27,15 @@ data class VerifiedNumberResponse(
             @SerializedName("email_address")
             val emailAddress: String,
             @SerializedName("fb_email")
-  
+            val fbEmail: String,
+            @SerializedName("fb_firebase_id")
+            val fbFirebaseId: String,
+            @SerializedName("fb_image_url")
+            val fbImageUrl: String,
+            @SerializedName("fb_name")
+            val fbName: String,
+            @SerializedName("first_name")
+            val firstName: String,
+            @SerializedName("g_email")
+            val gEmail: String,
+            @Serialized

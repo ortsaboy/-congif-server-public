@@ -38,4 +38,14 @@ data class VerifiedNumberResponse(
             val firstName: String,
             @SerializedName("g_email")
             val gEmail: String,
-            @Serialized
+            @SerializedName("g_firebase_id")
+            val gFirebaseId: String,
+            @SerializedName("g_image_url")
+            val gImageUrl: String,
+            @SerializedName("g_name")
+            val gName: String,
+            @SerializedName("last_name")
+            val lastName: String,
+            @SerializedName("phone_country_code")
+            val phoneCountryCode: String,
+            @SerializedName("pho

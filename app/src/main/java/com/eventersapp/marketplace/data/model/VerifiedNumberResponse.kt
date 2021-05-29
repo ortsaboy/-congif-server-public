@@ -48,4 +48,15 @@ data class VerifiedNumberResponse(
             val lastName: String,
             @SerializedName("phone_country_code")
             val phoneCountryCode: String,
-            @SerializedName("pho
+            @SerializedName("phone_firebase_id")
+            val phoneFirebaseId: String,
+            @SerializedName("phone_number")
+            val phoneNumber: String,
+            @SerializedName("pincode")
+            val pincode: String,
+            @SerializedName("profile_pic")
+            val profilePic: String,
+            @SerializedName("provider")
+            val provider: String,
+            @SerializedName("state")
+            val state: Strin

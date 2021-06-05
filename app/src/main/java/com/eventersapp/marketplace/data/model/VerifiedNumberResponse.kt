@@ -59,4 +59,9 @@ data class VerifiedNumberResponse(
             @SerializedName("provider")
             val provider: String,
             @SerializedName("state")
-            val state: Strin
+            val state: String,
+            @SerializedName("user_id")
+            val userId: String
+        )
+    }
+}

@@ -12,4 +12,17 @@ class AccountSettingsRepository(
         return db.getAccountsDao().fetchAllAccount()
     }
 
-    suspend fun updateAc
+    suspend fun updateAccountDetail(account: Account): Int {
+        return db.getAccountsDao().updateAccount(account)
+    }
+
+    suspend fun updateAccountAddressDetail(account: Account): Int {
+        updateIsSelectedColumn()
+        return db.getAccountsDao().updateAccount(account)
+    }
+
+    private suspend fun updateIsSelectedColumn() {
+        return db.getAccountsDao().updateIsSelectedColumn()
+    }
+
+    suspend fun deleteAccount(acco

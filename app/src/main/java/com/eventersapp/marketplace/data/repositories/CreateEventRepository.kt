@@ -11,4 +11,9 @@ class CreateEventRepository(
 
     suspend fun createEvent(
         createEventPostBody: CreateEventPostBody
-    ): CreateEventRespons
+    ): CreateEventResponse {
+
+        return apiRequest { api.createEventData(createEventPostBody) }
+    }
+
+}

@@ -19,4 +19,10 @@ class ResellOrSendEventRepository(
     }
 
     suspend fun sendEvent(
-     
+        sendTicketEventPostBody: SendTicketEventPostBody
+    ): SendTicketEventResponse {
+
+        return apiRequest { api.sendTicketData(sendTicketEventPostBody) }
+    }
+
+}

@@ -12,4 +12,18 @@ import com.eventersapp.marketplace.util.State
 import com.facebook.AccessToken
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.au
+import com.google.firebase.auth.GoogleAuthProvider
+
+class SignupRepository(
+    private val api: ApiInterface
+) : SafeApiRequest() {
+
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+
+    private val _googleUserLiveData =
+        MutableLiveData<Event<State<String>>>()
+    val googleUserLiveData: LiveData<Event<State<String>>>
+        get() = _googleUserLiveData
+
+    private val _facebookUserLiveData =
+        MutableLiveDa

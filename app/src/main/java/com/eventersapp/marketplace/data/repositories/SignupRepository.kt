@@ -26,4 +26,17 @@ class SignupRepository(
         get() = _googleUserLiveData
 
     private val _facebookUserLiveData =
-        MutableLiveDa
+        MutableLiveData<Event<State<String>>>()
+    val facebookUserLiveData: LiveData<Event<State<String>>>
+        get() = _facebookUserLiveData
+
+    suspend fun connect(
+        connectPostBody: ConnectPostBody
+    ): ConnectResponse {
+
+        return apiRequest { api.connectData(connectPostBody) }
+    }
+
+    fun firebaseAuthWithGoogle(idToken: String) {
+        _googleUserLiveData.postValue(Event(State.loading()))
+        val credential = GoogleAut

@@ -39,4 +39,12 @@ class SignupRepository(
 
     fun firebaseAuthWithGoogle(idToken: String) {
         _googleUserLiveData.postValue(Event(State.loading()))
-        val credential = GoogleAut
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.i("Info", "Google sign in success")
+                    val user = auth.currentUser
+                    _googleUserLiveData.postValue(Event(State.success(user.toString())))
+                } else {
+               

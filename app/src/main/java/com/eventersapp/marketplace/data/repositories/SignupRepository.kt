@@ -47,4 +47,13 @@ class SignupRepository(
                     val user = auth.currentUser
                     _googleUserLiveData.postValue(Event(State.success(user.toString())))
                 } else {
-               
+                    Log.i("Info", "Google sign in failure", task.exception)
+                    _googleUserLiveData.postValue(Event(State.error("Authentication Failed")))
+                }
+            }
+    }
+
+    fun firebaseAuthWithFacebook(token: AccessToken) {
+        _facebookUserLiveData.postValue(Event(State.loading()))
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth

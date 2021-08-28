@@ -56,4 +56,12 @@ class SignupRepository(
     fun firebaseAuthWithFacebook(token: AccessToken) {
         _facebookUserLiveData.postValue(Event(State.loading()))
         val credential = FacebookAuthProvider.getCredential(token.token)
-        auth
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.i("Info", "Facebook sign in success")
+                    val user = auth.currentUser
+                    _facebookUserLiveData.postValue(Event(State.success(user.toString())))
+                } else {
+                    // If sign in fails, display a message to the user.
+                  

@@ -64,4 +64,11 @@ class SignupRepository(
                     _facebookUserLiveData.postValue(Event(State.success(user.toString())))
                 } else {
                     // If sign in fails, display a message to the user.
-                  
+                    Log.i("Info", "Facebook sign in failure", task.exception)
+                    _facebookUserLiveData.postValue(Event(State.error("Authentication Failed")))
+                }
+            }
+    }
+
+
+}

@@ -21,4 +21,19 @@ class AddNewAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
     private lateinit var dataBind: FragmentAddNewAccountBinding
 
 
-    over
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_add_new_account,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, sa

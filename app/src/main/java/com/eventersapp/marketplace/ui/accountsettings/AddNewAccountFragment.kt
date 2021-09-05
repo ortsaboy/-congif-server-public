@@ -36,4 +36,14 @@ class AddNewAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, sa
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.button_create_account -> {
+                findNavController().navigate(R.id.action_addNewAccountFragment_to_backupPassphraseFragment)
+            }
+            R.id.button_recover_passphrase -> {
+                findNavController().navigate(R.id.action_addNewAccountF

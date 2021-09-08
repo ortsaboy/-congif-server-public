@@ -46,4 +46,16 @@ class AddNewAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 findNavController().navigate(R.id.action_addNewAccountFragment_to_backupPassphraseFragment)
             }
             R.id.button_recover_passphrase -> {
-                findNavController().navigate(R.id.action_addNewAccountF
+                findNavController().navigate(R.id.action_addNewAccountFragment_to_recoverPassphraseFragment)
+            }
+        }
+    }
+
+
+    private fun setupUI() {
+        (activity as AppCompatActivity?)?.setSupportActionBar(dataBind.toolbar)
+        dataBind.toolbar.setNavigationIcon(R.drawable.ic_close)
+        dataBind.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+        dataBind.buttonCreateAccount.setOnClickListener(thi

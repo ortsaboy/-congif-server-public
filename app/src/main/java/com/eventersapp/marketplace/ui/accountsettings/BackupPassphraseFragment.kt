@@ -73,4 +73,15 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
         dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         dataBind.toolbar.setNavigationOnClickListener {
             findNavController().popBackStack()
-      
+        }
+        val mLayoutManager = GridLayoutManager(activity, 3)
+        dataBind.recyclerViewToMnemonic.apply {
+            layoutManager = mLayoutManager
+            itemAnimator = DefaultItemAnimator()
+            adapter = customAdapterBackupPassphrase
+        }
+        dataBind.textShowQr.setOnClickListener(this)
+        dataBind.textSharePassphrase.setOnClickListener(this)
+    }
+
+    p

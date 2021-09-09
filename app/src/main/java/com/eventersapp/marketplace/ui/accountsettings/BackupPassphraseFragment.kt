@@ -62,4 +62,15 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
             R.id.text_show_qr -> {
                 showPassphraseQRCode()
             }
-          
+            R.id.text_share_passphrase -> {
+                sharePassphrase()
+            }
+        }
+    }
+
+    private fun setupUI() {
+        (activity as AppCompatActivity?)?.setSupportActionBar(dataBind.toolbar)
+        dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        dataBind.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+      

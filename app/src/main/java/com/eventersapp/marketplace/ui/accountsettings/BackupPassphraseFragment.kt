@@ -47,4 +47,19 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
             container,
             false
         )
-        da
+        dataBind.viewmodel = viewModel
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        initializeObserver()
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.text_show_qr -> {
+                showPassphraseQRCode()
+            }
+          

@@ -32,4 +32,19 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        customAdapterBackupPassphrase = Custo
+        customAdapterBackupPassphrase = CustomAdapterBackupPassphrase()
+        generatePassPhrase()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_backup_passphrase,
+            container,
+            false
+        )
+        da

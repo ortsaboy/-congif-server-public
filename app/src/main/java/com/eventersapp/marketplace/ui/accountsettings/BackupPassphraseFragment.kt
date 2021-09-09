@@ -16,4 +16,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.eventersapp.marketplace.R
 import com.eventersapp.marketplace.databinding.FragmentBackupPassphraseBinding
-import 
+import com.eventersapp.marketplace.ui.adapter.CustomAdapterBackupPassphrase
+import com.eventersapp.marketplace.ui.viewmodel.BackupPassphraseViewModel
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
+
+class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
+
+    override val kodein by closestKodein()
+    private lateinit var dataBind: FragmentBackupP

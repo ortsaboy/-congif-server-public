@@ -84,4 +84,17 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
         dataBind.textSharePassphrase.setOnClickListener(this)
     }
 
-    p
+    private fun initializeObserver() {
+        viewModel.passphraseListLiveData.observe(viewLifecycleOwner, Observer {
+            customAdapterBackupPassphrase.setData(it)
+        })
+
+    }
+
+    private fun generatePassPhrase() {
+        viewModel.generatePassPhrase()
+    }
+
+    private fun sharePassphrase() {
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "text/pla

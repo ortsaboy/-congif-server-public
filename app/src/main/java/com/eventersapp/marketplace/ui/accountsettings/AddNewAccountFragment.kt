@@ -58,4 +58,10 @@ class AddNewAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
         dataBind.toolbar.setNavigationOnClickListener {
             findNavController().popBackStack()
         }
-        dataBind.buttonCreateAccount.setOnClickListener(thi
+        dataBind.buttonCreateAccount.setOnClickListener(this)
+        dataBind.buttonRecoverPassphrase.setOnClickListener(this)
+
+    }
+
+
+}

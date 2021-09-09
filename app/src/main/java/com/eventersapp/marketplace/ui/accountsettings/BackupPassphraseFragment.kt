@@ -24,4 +24,12 @@ import org.kodein.di.android.x.closestKodein
 class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
 
     override val kodein by closestKodein()
-    private lateinit var dataBind: FragmentBackupP
+    private lateinit var dataBind: FragmentBackupPassphraseBinding
+    private lateinit var customAdapterBackupPassphrase: CustomAdapterBackupPassphrase
+    private val viewModel: BackupPassphraseViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(BackupPassphraseViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        customAdapterBackupPassphrase = Custo

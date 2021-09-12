@@ -97,4 +97,15 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
 
     private fun sharePassphrase() {
         val sharingIntent = Intent(Intent.ACTION_SEND)
-        sharingIntent.type = "text/pla
+        sharingIntent.type = "text/plain"
+        val shareBody = viewModel.getPassphrase()
+        sharingIntent.putExtra(
+            Intent.EXTRA_SUBJECT,
+            "Backup Passphrase"
+        )
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
+        startActivity(Intent.createChooser(sharingIntent, "Share via"))
+    }
+
+    private fun showPassphraseQRCode() {
+        findNavController().

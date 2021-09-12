@@ -108,4 +108,10 @@ class BackupPassphraseFragment : Fragment(), KodeinAware, View.OnClickListener {
     }
 
     private fun showPassphraseQRCode() {
-        findNavController().
+        findNavController().navigate(
+            R.id.action_backupPassphraseFragment_to_showPassphraseQRCodeBottomDialogFragment,
+            bundleOf("passphrase" to viewModel.getPassphrase())
+        )
+
+    }
+}

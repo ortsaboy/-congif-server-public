@@ -11,4 +11,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.eventersapp.marketplace.R
-import com.eventersapp.marketplace.d
+import com.eventersapp.marketplace.databinding.PassphraseVerifiedBottomSheetBinding
+import com.eventersapp.marketplace.ui.viewmodel.BackupPassphraseViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+
+class PassphraseVerifiedBottomDialogFragment : BottomSheetDialogFragment() {
+
+
+    private lateinit var dataBind: PassphraseVerifiedBottomShee

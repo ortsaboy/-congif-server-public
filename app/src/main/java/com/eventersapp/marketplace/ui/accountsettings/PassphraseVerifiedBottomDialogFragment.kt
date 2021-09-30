@@ -42,4 +42,19 @@ class PassphraseVerifiedBottomDialogFragment : BottomSheetDialogFragment() {
         dataBind = DataBindingUtil.inflate(
             inflater,
             R.layout.passphrase_verified_bottom_sheet,
-  
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+    private fun setupUI() {
+        dataBind.buttonAccept.setOnClickListener {
+            dismiss()
+            findNavController().navigate(
+               

@@ -17,4 +17,15 @@ import com.eventersapp.marketplace.ui.viewmodelfactory.RecoverPassphraseViewMode
 import com.eventersapp.marketplace.util.EventObserver
 import com.eventersapp.marketplace.util.snackbar
 import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.closestKodei
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
+
+
+class RecoverPassphraseFragment : Fragment(), KodeinAware {
+
+
+    override val kodein by closestKodein()
+    private lateinit var dataBind: FragmentRecoverPassphraseBinding
+    private val factory: RecoverPassphraseViewModelFactory by instance()
+    private val viewModel: RecoverPassphraseViewModel by lazy {
+        ViewModelProvider(this, factory).get(RecoverPassphraseViewModel

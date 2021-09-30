@@ -29,4 +29,17 @@ class PassphraseVerifiedBottomDialogFragment : BottomSheetDialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return BottomSheetDialog(requireContext(), theme).apply {
             isCancelable = false
-         
+            setCanceledOnTouchOutside(false)
+        }
+    }
+
+    @Nullable
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        @Nullable container: ViewGroup?,
+        @Nullable savedInstanceState: Bundle?
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.passphrase_verified_bottom_sheet,
+  

@@ -19,4 +19,14 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class PassphraseVerifiedBottomDialogFragment : BottomSheetDialogFragment() {
 
 
-    private lateinit var dataBind: PassphraseVerifiedBottomShee
+    private lateinit var dataBind: PassphraseVerifiedBottomSheetBinding
+    private val viewModel: BackupPassphraseViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(BackupPassphraseViewModel::class.java)
+    }
+
+    override fun getTheme(): Int = R.style.BottomSheetDialogTheme
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return BottomSheetDialog(requireContext(), theme).apply {
+            isCancelable = false
+         

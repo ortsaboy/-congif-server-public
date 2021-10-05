@@ -56,4 +56,17 @@ class RecoverPassphraseFragment : Fragment(), KodeinAware {
 
     private fun setupUI() {
         (activity as AppCompatActivity?)?.setSupportActionBar(dataBind.toolbar)
-        dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_bac
+        dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        dataBind.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+
+    }
+
+    private fun initializeObserver() {
+        viewModel.messageLiveData.observe(viewLifecycleOwner, EventObserver {
+            if (it.isNotBlank()) {
+                dataBind.rootLayout.snackbar(it)
+            }
+        })
+        viewModel.showErrorDialogLiveData.ob

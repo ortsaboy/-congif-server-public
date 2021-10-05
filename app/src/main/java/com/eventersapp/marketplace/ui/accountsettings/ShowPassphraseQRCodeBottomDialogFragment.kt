@@ -6,4 +6,12 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import an
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.Nullable
+import androidx.databinding.DataBindingUtil
+import com.eventersapp.marketplace.R
+import com.eventersapp.marketplace.databinding.ShowPassphraseQrCodeBottomSheetBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.googl

@@ -28,4 +28,20 @@ class RecoverPassphraseFragment : Fragment(), KodeinAware {
     private lateinit var dataBind: FragmentRecoverPassphraseBinding
     private val factory: RecoverPassphraseViewModelFactory by instance()
     private val viewModel: RecoverPassphraseViewModel by lazy {
-        ViewModelProvider(this, factory).get(RecoverPassphraseViewModel
+        ViewModelProvider(this, factory).get(RecoverPassphraseViewModel::class.java)
+    }
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_recover_passphrase,
+            container,
+            false
+        )
+        dataBind.lifecycleOwner = viewLifecycleOwner
+        dataBind.viewm

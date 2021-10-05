@@ -44,4 +44,16 @@ class RecoverPassphraseFragment : Fragment(), KodeinAware {
             false
         )
         dataBind.lifecycleOwner = viewLifecycleOwner
-        dataBind.viewm
+        dataBind.viewmodel = viewModel
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        initializeObserver()
+    }
+
+    private fun setupUI() {
+        (activity as AppCompatActivity?)?.setSupportActionBar(dataBind.toolbar)
+        dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_bac

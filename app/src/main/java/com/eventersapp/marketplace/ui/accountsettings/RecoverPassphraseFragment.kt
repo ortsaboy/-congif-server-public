@@ -81,4 +81,9 @@ class RecoverPassphraseFragment : Fragment(), KodeinAware {
         builder.setTitle("Error")
         builder.setMessage(errorMessage)
         builder.setPositiveButton("OK") { dialog, which ->
-            
+            dialog.dismiss()
+        }
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
+}

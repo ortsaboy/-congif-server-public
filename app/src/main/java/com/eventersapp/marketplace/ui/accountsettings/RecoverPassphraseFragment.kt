@@ -69,4 +69,16 @@ class RecoverPassphraseFragment : Fragment(), KodeinAware {
                 dataBind.rootLayout.snackbar(it)
             }
         })
-        viewModel.showErrorDialogLiveData.ob
+        viewModel.showErrorDialogLiveData.observe(viewLifecycleOwner, EventObserver {
+            if (it.isNotBlank()) {
+                showErrorDialogBox(it)
+            }
+        })
+    }
+
+    private fun showErrorDialogBox(errorMessage: String) {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Error")
+        builder.setMessage(errorMessage)
+        builder.setPositiveButton("OK") { dialog, which ->
+            

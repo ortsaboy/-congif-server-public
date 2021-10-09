@@ -25,4 +25,14 @@ import com.journeyapps.barcodescanner.BarcodeEncoder
 class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
     View.OnClickListener {
 
-    private late
+    private lateinit var dataBind: ShowPassphraseQrCodeBottomSheetBinding
+    private lateinit var bitmap: Bitmap
+    private var passphrase = ""
+
+    override fun getTheme(): Int = R.style.BottomSheetDialogTheme
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return BottomSheetDialog(requireContext(), theme)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {

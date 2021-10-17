@@ -63,4 +63,13 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
     override fun onClick(view: View) {
         when (view.id) {
             R.id.text_close_bottom_sheet -> dismiss()
-       
+            R.id.button_share_qr_code -> {
+                val bitmapPath: String =
+                    MediaStore.Images.Media.insertImage(
+                        requireContext().contentResolver,
+                        bitmap,
+                        "Passphrase QR",
+                        null
+                    )
+                val bitmapUri: Uri = Uri.parse(bitmapPath)
+                val inten

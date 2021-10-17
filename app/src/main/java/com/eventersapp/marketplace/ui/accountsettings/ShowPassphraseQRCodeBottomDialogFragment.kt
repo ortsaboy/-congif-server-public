@@ -48,4 +48,19 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
     ): View? {
         dataBind = DataBindingUtil.inflate(
             inflater,
-            R.layout.show_pa
+            R.layout.show_passphrase_qr_code_bottom_sheet,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.text_close_bottom_sheet -> dismiss()
+       

@@ -36,3 +36,16 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        passphrase = arguments?.getString("passphrase") ?: ""
+    }
+
+    @Nullable
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        @Nullable container: ViewGroup?,
+        @Nullable savedInstanceState: Bundle?
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.show_pa

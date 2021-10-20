@@ -82,4 +82,15 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
 
     private fun setupUI() {
         dataBind.textCloseBottomSheet.setOnClickListener(this)
-        dataBind.buttonShareQrCode.setOnClick
+        dataBind.buttonShareQrCode.setOnClickListener(this)
+        generatePassphraseQRCode()
+    }
+
+    private fun generatePassphraseQRCode() {
+        val text = passphrase
+        val multiFormatWriter = MultiFormatWriter()
+        try {
+            val bitMatrix: BitMatrix =
+                multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 200, 200)
+            val barcodeEncoder = BarcodeEncoder()
+            bitmap = barcodeEncoder.createBitmap(bitMat

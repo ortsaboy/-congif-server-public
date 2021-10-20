@@ -81,3 +81,26 @@ class ViewPassphraseBottomDialogFragment : BottomSheetDialogFragment(),
             myAccount.passphrase?.split(" ")?.toList() as ArrayList<String>
         )
         //dataBind.textShowQr.setOnClickListener(this)
+        dataBind.textSharePassphrase.setOnClickListener(this)
+    }
+
+    private fun sharePassphrase() {
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "text/plain"
+        val shareBody = myAccount.passphrase
+        sharingIntent.putExtra(
+            Intent.EXTRA_SUBJECT,
+            "Backup Passphrase"
+        )
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
+        startActivity(Intent.createChooser(sharingIntent, "Share via"))
+    }
+
+    /* private fun showPassphraseQRCode() {
+         findNavController().navigate(R.id.action_viewPassphraseBottomDialogFragment_to_showPassphraseQRCodeBottomDialogFragment,
+             bundleOf("passphrase" to myAccount.passphrase)
+         )
+
+     }*/
+
+}

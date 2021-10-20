@@ -72,4 +72,14 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
                         null
                     )
                 val bitmapUri: Uri = Uri.parse(bitmapPath)
-                val inten
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "image/png"
+                intent.putExtra(Intent.EXTRA_STREAM, bitmapUri)
+                startActivity(Intent.createChooser(intent, "Share Passphrase QR"))
+            }
+        }
+    }
+
+    private fun setupUI() {
+        dataBind.textCloseBottomSheet.setOnClickListener(this)
+        dataBind.buttonShareQrCode.setOnClick

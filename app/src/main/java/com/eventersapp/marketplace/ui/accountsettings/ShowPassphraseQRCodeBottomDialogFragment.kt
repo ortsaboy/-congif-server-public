@@ -93,4 +93,10 @@ class ShowPassphraseQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
             val bitMatrix: BitMatrix =
                 multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 200, 200)
             val barcodeEncoder = BarcodeEncoder()
-            bitmap = barcodeEncoder.createBitmap(bitMat
+            bitmap = barcodeEncoder.createBitmap(bitMatrix)
+            dataBind.imageQrCode.setImageBitmap(bitmap)
+        } catch (e: WriterException) {
+            e.printStackTrace()
+        }
+    }
+}

@@ -10,4 +10,16 @@ import com.eventersapp.marketplace.R
 import com.eventersapp.marketplace.data.model.BlogListResponse
 import com.eventersapp.marketplace.databinding.ListItemBlogPostsBinding
 import com.eventersapp.marketplace.util.AppUtils
-import com.e
+import com.eventersapp.marketplace.util.LoadingViewHolder
+
+class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    companion object {
+        private const val TYPE_ITEM = 1
+        private const val TYPE_LOADING = 2
+    }
+
+    private var blogList = ArrayList<BlogListResponse.Post?>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType)

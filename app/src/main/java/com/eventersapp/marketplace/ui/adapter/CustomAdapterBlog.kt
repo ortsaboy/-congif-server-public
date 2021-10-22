@@ -22,4 +22,14 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var blogList = ArrayList<BlogListResponse.Post?>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return when (viewType)
+        return when (viewType) {
+            TYPE_ITEM -> {
+                val binding: ListItemBlogPostsBinding = DataBindingUtil.inflate(
+                    LayoutInflater.from(parent.context), R.layout.list_item_blog_posts, parent,
+                    false
+                )
+                ItemViewHolder(binding)
+            }
+            else -> {
+                val view: View = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.list_item

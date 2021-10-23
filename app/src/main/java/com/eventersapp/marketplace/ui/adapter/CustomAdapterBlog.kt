@@ -32,4 +32,16 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             else -> {
                 val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.list_item
+                    .inflate(R.layout.list_item_lazy_loading, parent, false)
+                LoadingViewHolder(view)
+            }
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is ItemViewHolder -> {
+                blogList[position]?.let { holder.bindItems(it) }
+            }
+            is LoadingViewHolder -> {
+                holder.showLoadingVi

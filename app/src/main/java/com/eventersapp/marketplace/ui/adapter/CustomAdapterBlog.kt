@@ -44,4 +44,23 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 blogList[position]?.let { holder.bindItems(it) }
             }
             is LoadingViewHolder -> {
-                holder.showLoadingVi
+                holder.showLoadingView()
+            }
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return blogList.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when {
+            blogList[position] == null -> TYPE_LOADING
+            else -> TYPE_ITEM
+        }
+    }
+
+    fun setData(newGlobalContent: ArrayList<BlogListResponse.Post?>?) {
+        if (newGlobalContent != null) {
+            blogList.clear()
+   

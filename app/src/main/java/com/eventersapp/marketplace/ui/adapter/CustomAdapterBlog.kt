@@ -79,4 +79,12 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         @SuppressLint("SetTextI18n")
         fun bindItems(blog: BlogListResponse.Post) {
             binding.apply {
-              
+                AppUtils.setGlideImage(imageBlogItemPoster, blog.featureImage)
+                textBlogItemTime.text = "${blog.readingTime} min"
+                textBlogItemTitle.text = blog.title
+                textBlogItemDescription.text = blog.excerpt
+                AppUtils.setGlideRoundedImage(
+                    imageBlogItemUser,
+                    ""
+                )
+                textBlogItemUserName.text

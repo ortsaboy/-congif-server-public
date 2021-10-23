@@ -63,4 +63,20 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun setData(newGlobalContent: ArrayList<BlogListResponse.Post?>?) {
         if (newGlobalContent != null) {
             blogList.clear()
-   
+            blogList.addAll(newGlobalContent)
+        } else {
+            blogList.add(newGlobalContent)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun getListData() = blogList
+
+    inner class ItemViewHolder(val binding: ListItemBlogPostsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+
+        @SuppressLint("SetTextI18n")
+        fun bindItems(blog: BlogListResponse.Post) {
+            binding.apply {
+              

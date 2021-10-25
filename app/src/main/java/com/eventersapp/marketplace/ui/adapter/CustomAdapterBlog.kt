@@ -87,4 +87,11 @@ class CustomAdapterBlog : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     imageBlogItemUser,
                     ""
                 )
-                textBlogItemUserName.text
+                textBlogItemUserName.text = "Nitika Garg"
+            }
+
+        }
+
+    }
+
+}

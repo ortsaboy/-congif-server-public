@@ -16,4 +16,14 @@ import com.eventersapp.marketplace.util.LoadingViewHolder
 class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    comp
+    companion object {
+        private const val TYPE_ITEM = 1
+        private const val TYPE_LOADING = 2
+    }
+
+    private var buyEventList = ArrayList<AllEventListResponse.Data.EventTicket>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            TYPE_ITEM -> {
+                val binding: ListItemBuyEventBinding = Da

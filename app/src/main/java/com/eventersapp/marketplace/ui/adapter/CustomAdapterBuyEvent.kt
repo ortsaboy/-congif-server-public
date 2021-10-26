@@ -35,4 +35,20 @@ class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
             else -> {
                 val view: View = LayoutInflater.from(parent.context)
                     .inflate(R.layout.list_item_lazy_loading, parent, false)
-                LoadingViewHolder
+                LoadingViewHolder(view)
+            }
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is ItemViewHolder -> {
+                buyEventList[position].let { holder.bindItems(it) }
+            }
+            is LoadingViewHolder -> {
+                holder.showLoadingView()
+            }
+        }
+    }
+
+    override fun getItemCount(): I

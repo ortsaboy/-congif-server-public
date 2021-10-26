@@ -26,4 +26,13 @@ class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             TYPE_ITEM -> {
-                val binding: ListItemBuyEventBinding = Da
+                val binding: ListItemBuyEventBinding = DataBindingUtil.inflate(
+                    LayoutInflater.from(parent.context), R.layout.list_item_buy_event, parent,
+                    false
+                )
+                ItemViewHolder(binding)
+            }
+            else -> {
+                val view: View = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.list_item_lazy_loading, parent, false)
+                LoadingViewHolder

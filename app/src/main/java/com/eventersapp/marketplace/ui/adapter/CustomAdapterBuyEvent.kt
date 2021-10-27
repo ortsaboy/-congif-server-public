@@ -51,4 +51,18 @@ class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
         }
     }
 
-    override fun getItemCount(): I
+    override fun getItemCount(): Int {
+        return buyEventList.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when {
+            buyEventList[position] == null -> TYPE_LOADING
+            else -> TYPE_ITEM
+        }
+    }
+
+    fun setData(newBuyEvent: ArrayList<AllEventListResponse.Data.EventTicket>) {
+        if (newBuyEvent != null) {
+            buyEventList.clear()
+            buyEventList

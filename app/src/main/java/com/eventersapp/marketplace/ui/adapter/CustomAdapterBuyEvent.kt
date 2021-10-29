@@ -77,4 +77,18 @@ class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
 
         @SuppressLint("SetTextI18n")
         fun bindItems(buyEvent: AllEventListResponse.Data.EventTicket) {
-            bind
+            binding.apply {
+                textTicketPrice.text = "$ ${buyEvent.price}"
+                textBuyTicket.setOnClickListener {
+                    fragment.showPayNowDialog(
+                        buyEvent.eventTicketId,
+                        AppConstants.RESELL_BUY_TICKET
+                    )
+                }
+            }
+
+        }
+
+    }
+
+}

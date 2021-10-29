@@ -65,4 +65,16 @@ class CustomAdapterBuyEvent(private val fragment: BuyEventFragment) :
     fun setData(newBuyEvent: ArrayList<AllEventListResponse.Data.EventTicket>) {
         if (newBuyEvent != null) {
             buyEventList.clear()
-            buyEventList
+            buyEventList.addAll(newBuyEvent)
+        } else {
+            buyEventList.add(newBuyEvent)
+        }
+        notifyDataSetChanged()
+    }
+
+    inner class ItemViewHolder(val binding: ListItemBuyEventBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        @SuppressLint("SetTextI18n")
+        fun bindItems(buyEvent: AllEventListResponse.Data.EventTicket) {
+            bind

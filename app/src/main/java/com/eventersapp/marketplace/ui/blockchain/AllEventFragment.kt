@@ -13,4 +13,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eventersapp.marketplace.R
 import com.eventersapp.marketplace.databinding.FragmentAllEventBinding
-import com.eventersap
+import com.eventersapp.marketplace.ui.adapter.CustomAdapterAllEvent
+import com.eventersapp.marketplace.ui.viewmodel.AllEventViewModel
+import com.eventersapp.marketplace.ui.viewmodelfactory.AllEventViewModelFactory
+import com.eventersapp.marketplace.util.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
+
+class AllEventFragment : Fragment

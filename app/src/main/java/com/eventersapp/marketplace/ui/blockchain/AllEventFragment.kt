@@ -32,4 +32,16 @@ class AllEventFragment : Fragment(), KodeinAware {
         ViewModelProvider(requireActivity(), factory).get(AllEventViewModel::class.java)
     }
 
-  
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        customAdapterAllEvent = CustomAdapterAllEvent()
+        if (viewModel.isAllEventsApiCalled) {
+            viewModel.getLoadedAllEventsList()
+        } else {
+            getAllEvents()
+        }
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGro

@@ -44,4 +44,20 @@ class AllEventFragment : Fragment(), KodeinAware {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGro
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_all_event,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        s

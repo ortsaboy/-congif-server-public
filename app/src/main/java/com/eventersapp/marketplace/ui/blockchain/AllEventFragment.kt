@@ -21,4 +21,15 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 
-class AllEventFragment : Fragment
+class AllEventFragment : Fragment(), KodeinAware {
+
+
+    override val kodein by closestKodein()
+    private lateinit var dataBind: FragmentAllEventBinding
+    private lateinit var customAdapterAllEvent: CustomAdapterAllEvent
+    private val factory: AllEventViewModelFactory by instance()
+    private val viewModel: AllEventViewModel by lazy {
+        ViewModelProvider(requireActivity(), factory).get(AllEventViewModel::class.java)
+    }
+
+  

@@ -60,4 +60,15 @@ class AllEventFragment : Fragment(), KodeinAware {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
-        s
+        setupAPICall()
+    }
+
+    private fun setupUI() {
+        val mLayoutManager = LinearLayoutManager(activity)
+        mLayoutManager.reverseLayout = true
+        mLayoutManager.stackFromEnd = true
+        dataBind.recyclerViewAllEvent.apply {
+            isNestedScrollingEnabled = false
+            layoutManager = mLayoutManager
+            itemAnimator = DefaultItemAnimator()
+     

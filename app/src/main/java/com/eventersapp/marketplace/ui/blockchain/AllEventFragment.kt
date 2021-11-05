@@ -71,4 +71,14 @@ class AllEventFragment : Fragment(), KodeinAware {
             isNestedScrollingEnabled = false
             layoutManager = mLayoutManager
             itemAnimator = DefaultItemAnimator()
-     
+            adapter = customAdapterAllEvent
+        }
+        dataBind.recyclerViewAllEvent.addOnItemTouchListener(
+            RecyclerTouchListener(
+                activity,
+                dataBind.recyclerViewAllEvent,
+                object : RecyclerTouchListener.ClickListener {
+
+                    override fun onClick(view: View?, position: Int) {
+                        findNavController().navigate(
+ 

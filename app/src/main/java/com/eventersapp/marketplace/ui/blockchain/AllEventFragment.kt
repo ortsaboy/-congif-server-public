@@ -81,4 +81,14 @@ class AllEventFragment : Fragment(), KodeinAware {
 
                     override fun onClick(view: View?, position: Int) {
                         findNavController().navigate(
- 
+                            R.id.action_dashboardFragment_to_buyEventFragment,
+                            bundleOf("all_event_data" to customAdapterAllEvent.getListData()[position])
+                        )
+                    }
+
+                    override fun onLongClick(view: View?, position: Int) {
+
+                    }
+                })
+        )
+        dataBind.allEvent

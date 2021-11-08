@@ -102,4 +102,12 @@ class AllEventFragment : Fragment(), KodeinAware {
             when (state) {
                 is State.Loading -> {
                     if (!dataBind.allEventsSwipeRefreshLayout.isRefreshing)
-                        AppUtils.showPr
+                        AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    if (state.data.isNotEmpty()) {
+                        dataBind.recyclerViewAllEvent.visibility = View.VISIBLE
+                        dataBind.textClickOnPlus.visibility = View.GONE
+                        customAdapterAllEvent.setData(state.data)
+                    } else {
+     

@@ -91,4 +91,15 @@ class AllEventFragment : Fragment(), KodeinAware {
                     }
                 })
         )
-        dataBind.allEvent
+        dataBind.allEventsSwipeRefreshLayout.setOnRefreshListener {
+            viewModel.refreshAllEventListData()
+        }
+    }
+
+
+    private fun setupAPICall() {
+        viewModel.allEventListLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    if (!dataBind.allEventsSwipeRefreshLayout.isRefreshing)
+                        AppUtils.showPr

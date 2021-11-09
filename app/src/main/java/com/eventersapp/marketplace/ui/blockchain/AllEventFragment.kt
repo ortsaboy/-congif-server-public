@@ -117,4 +117,18 @@ class AllEventFragment : Fragment(), KodeinAware {
                         dataBind.allEventsSwipeRefreshLayout.isRefreshing = false
                     else
                         AppUtils.hideProgressBar()
-    
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+    }
+
+
+    private fun getAllEvents() {
+        viewModel.getAllEventList()
+    }
+
+}

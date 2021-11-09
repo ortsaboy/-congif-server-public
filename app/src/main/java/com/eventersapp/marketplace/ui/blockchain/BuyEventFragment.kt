@@ -117,3 +117,70 @@ class BuyEventFragment : Fragment(), KodeinAware {
     }
 
     private fun setupAPICall() {
+        viewModel.buyNormalTicketEventLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("Ticket buy successfully")
+                    findNavController().navigate(R.id.action_buyEventFragment_to_dashboardFragment)
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+
+        viewModel.buyResellTicketEventLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("Resell ticket buy successfully")
+                    findNavController().navigate(R.id.action_buyEventFragment_to_dashboardFragment)
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+    }
+
+
+    private fun getAllBuyEvents(allEvent: AllEventListResponse.Data) {
+        if (allEvent.eventTicket != null)
+            customAdapterBuyEvent.setData(allEvent.eventTicket)
+    }
+
+
+    private fun setUserInfo(allEvent: AllEventListResponse.Data) {
+        val userData = AppUtils.getUserPreference(requireContext())
+        viewModel.setUserInfo(allEvent, userData, requireContext().deviceId())
+    }
+
+    fun showPayNowDialog(ticketEventId: Int, ticket: String) {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setIcon(R.drawable.eventers_app_logo)
+        builder.setTitle("PAY NOW")
+        builder.setMessage("Pay for the event by clicking on the button")
+        builder.setPositiveButton("Pay now") { dialog, which ->
+            if (ticket == BUY_TICKET)
+                viewModel.buyNormalTicket()
+            else if (ticket == RESELL_BUY_TICKET)
+                viewModel.buyResellTicket(ticketEventId)
+        }
+        builder.setNegativeButton("Cancel") { dialog, which ->
+            dialog.cancel()
+        }
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+}

@@ -110,4 +110,11 @@ class AllEventFragment : Fragment(), KodeinAware {
                         dataBind.textClickOnPlus.visibility = View.GONE
                         customAdapterAllEvent.setData(state.data)
                     } else {
-     
+                        dataBind.recyclerViewAllEvent.visibility = View.GONE
+                        dataBind.textClickOnPlus.visibility = View.VISIBLE
+                    }
+                    if (dataBind.allEventsSwipeRefreshLayout.isRefreshing)
+                        dataBind.allEventsSwipeRefreshLayout.isRefreshing = false
+                    else
+                        AppUtils.hideProgressBar()
+    

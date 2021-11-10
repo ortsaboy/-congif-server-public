@@ -14,4 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eventersapp.marketplace.R
 import com.eventersapp.marketplace.databinding.FragmentBlogBinding
-impo
+import com.eventersapp.marketplace.ui.adapter.CustomAdapterBlog
+import com.eventersapp.marketplace.ui.viewmodel.BlogViewModel
+import com.eventersapp.marketplace.ui.viewmodelfactory.BlogViewModelFactory
+import com.eventersapp.marketplace.util.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
+
+class BlogFragment : Fragment(), KodeinAware {

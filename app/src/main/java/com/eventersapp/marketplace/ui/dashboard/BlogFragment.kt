@@ -23,3 +23,14 @@ import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 
 class BlogFragment : Fragment(), KodeinAware {
+
+
+    override val kodein by closestKodein()
+    private lateinit var dataBind: FragmentBlogBinding
+    private lateinit var customAdapterBlog: CustomAdapterBlog
+    private val factory: BlogViewModelFactory by instance()
+    private val viewModel: BlogViewModel by lazy {
+        ViewModelProvider(requireActivity(), factory).get(BlogViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {

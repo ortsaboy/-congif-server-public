@@ -34,3 +34,18 @@ class BlogFragment : Fragment(), KodeinAware {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        customAdapterBlog = CustomAdapterBlog()
+        if (viewModel.isBlogApiCalled) {
+            viewModel.getLoadedBlogList()
+        } else {
+            getBlogList()
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+ 

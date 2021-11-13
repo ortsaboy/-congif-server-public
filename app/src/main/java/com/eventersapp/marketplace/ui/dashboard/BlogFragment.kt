@@ -48,4 +48,20 @@ class BlogFragment : Fragment(), KodeinAware {
         savedInstanceState: Bundle?
     ): View? {
         dataBind = DataBindingUtil.inflate(
- 
+            inflater,
+            R.layout.fragment_blog,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        initializeObserver()
+        setupAPICall()
+    }
+
+    private fun setupUI() {
+        val mLayoutManage

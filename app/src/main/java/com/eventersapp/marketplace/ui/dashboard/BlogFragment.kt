@@ -64,4 +64,12 @@ class BlogFragment : Fragment(), KodeinAware {
     }
 
     private fun setupUI() {
-        val mLayoutManage
+        val mLayoutManager = LinearLayoutManager(activity)
+        dataBind.recyclerViewBlogPosts.apply {
+            isNestedScrollingEnabled = false
+            layoutManager = mLayoutManager
+            itemAnimator = DefaultItemAnimator()
+            adapter = customAdapterBlog
+        }
+        initScrollListener(dataBind.recyclerViewBlogPosts)
+        dataBind.recyclerViewBlogPosts.addOnItemTouchL

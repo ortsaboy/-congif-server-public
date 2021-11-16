@@ -72,4 +72,13 @@ class BlogFragment : Fragment(), KodeinAware {
             adapter = customAdapterBlog
         }
         initScrollListener(dataBind.recyclerViewBlogPosts)
-        dataBind.recyclerViewBlogPosts.addOnItemTouchL
+        dataBind.recyclerViewBlogPosts.addOnItemTouchListener(
+            RecyclerTouchListener(
+                activity,
+                dataBind.recyclerViewBlogPosts,
+                object : RecyclerTouchListener.ClickListener {
+
+                    override fun onClick(view: View?, position: Int) {
+                        AppUtils.openCustomChromeTab(
+                            requireContext(),
+                            customAdapterBlo

@@ -81,4 +81,17 @@ class BlogFragment : Fragment(), KodeinAware {
                     override fun onClick(view: View?, position: Int) {
                         AppUtils.openCustomChromeTab(
                             requireContext(),
-                            customAdapterBlo
+                            customAdapterBlog.getListData()[position]?.url
+                                ?: ""
+                        )
+                    }
+
+                    override fun onLongClick(view: View?, position: Int) {
+
+                    }
+                })
+        )
+    }
+
+    private fun initializeObserver() {
+        viewModel.messageLiveData.observe(viewLifecycleOwner, EventObserver

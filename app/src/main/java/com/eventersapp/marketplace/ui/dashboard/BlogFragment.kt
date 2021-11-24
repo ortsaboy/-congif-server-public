@@ -94,4 +94,18 @@ class BlogFragment : Fragment(), KodeinAware {
     }
 
     private fun initializeObserver() {
-        viewModel.messageLiveData.observe(viewLifecycleOwner, EventObserver
+        viewModel.messageLiveData.observe(viewLifecycleOwner, EventObserver {
+            if (it.isNotBlank()) {
+                dataBind.rootLayout.snackbar(it)
+            }
+        })
+        viewModel.loadMoreListLiveData.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                customAdapterBlog.setData(null)
+                Handler().postDelayed({
+                    viewModel.loadMore()
+                }, 2000)
+            }
+        })
+    }
+

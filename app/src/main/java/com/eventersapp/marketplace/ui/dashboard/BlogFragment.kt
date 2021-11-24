@@ -109,3 +109,14 @@ class BlogFragment : Fragment(), KodeinAware {
         })
     }
 
+    private fun setupAPICall() {
+        viewModel.blogListLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    customAdapterBlog.setData(state.data)
+                    AppUtils.hideProgressBar()
+                }
+     

@@ -131,4 +131,9 @@ class BlogFragment : Fragment(), KodeinAware {
     private fun initScrollListener(recyclerViewGlobalContentPosts: RecyclerView) {
         recyclerViewGlobalContentPosts.addOnScrollListener(object :
             RecyclerView.OnScrollListener() {
-            
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val visibleItemCount = layoutManager.childCount
+                val totalItemCount = layoutManager.itemCount
+                val firstVisibleItemPosition = layoutManager.findFir

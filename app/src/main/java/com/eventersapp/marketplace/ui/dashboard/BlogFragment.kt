@@ -119,4 +119,16 @@ class BlogFragment : Fragment(), KodeinAware {
                     customAdapterBlog.setData(state.data)
                     AppUtils.hideProgressBar()
                 }
-     
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+
+                }
+            }
+        })
+    }
+
+    private fun initScrollListener(recyclerViewGlobalContentPosts: RecyclerView) {
+        recyclerViewGlobalContentPosts.addOnScrollListener(object :
+            RecyclerView.OnScrollListener() {
+            

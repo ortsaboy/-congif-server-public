@@ -136,4 +136,21 @@ class BlogFragment : Fragment(), KodeinAware {
                 val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val visibleItemCount = layoutManager.childCount
                 val totalItemCount = layoutManager.itemCount
-                val firstVisibleItemPosition = layoutManager.findFir
+                val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+                viewModel.checkForLoadMoreItems(
+                    visibleItemCount,
+                    totalItemCount,
+                    firstVisibleItemPosition
+                )
+            }
+
+        })
+    }
+
+
+    private fun getBlogList() {
+        viewModel.getBlogList()
+    }
+
+
+}

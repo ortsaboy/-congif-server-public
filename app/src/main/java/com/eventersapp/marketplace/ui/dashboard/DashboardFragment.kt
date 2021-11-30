@@ -23,4 +23,16 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         fun newInstance() = DashboardFragment()
     }
 
-    private lateinit var dataBind
+    private lateinit var dataBind: DashboardFragmentBinding
+    private var startingPosition = 0
+    private val viewModel: DashboardViewModel by lazy {
+        ViewModelProvider(this).get(DashboardViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val fragment = HomeFragment()
+        loadFragment(fragment, 0)
+    }
+
+    override fun onC

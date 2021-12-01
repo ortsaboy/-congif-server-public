@@ -64,4 +64,12 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         dataBind.navScan.setOnClickListener(this)
         dataBind.navBlog.setOnClickListener(this)
         dataBind.navProfile.setOnClickListener(this)
-        
+        dataBind.fabSelectService.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_createEventFragment)
+        }
+        when (viewModel.bottomNavPosition) {
+            0 -> ImageViewCompat.setImageTintList(
+                dataBind.navHome,
+                ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+            )
+         

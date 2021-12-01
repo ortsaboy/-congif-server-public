@@ -49,4 +49,19 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+
+    override fun onClick(view: View) {
+        loadFragmentFromBottomNav(view.id)
+    }
+
+
+    private fun setupUI() {
+        dataBind.navHome.setOnClickListener(this)
+        dataBind.navScan.setOnClickListener(this)
+        dataBind.navBlog.setOnClickListener(this)
+        dataBind.navProfile.setOnClickListener(this)
+        

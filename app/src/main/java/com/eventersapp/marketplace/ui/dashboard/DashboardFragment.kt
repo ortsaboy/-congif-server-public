@@ -72,4 +72,12 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 dataBind.navHome,
                 ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
             )
-         
+            1 -> ImageViewCompat.setImageTintList(
+                dataBind.navScan,
+                ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+            )
+            2 -> ImageViewCompat.setImageTintList(
+                dataBind.navBlog,
+                ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+            )
+ 

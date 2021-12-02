@@ -80,4 +80,14 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 dataBind.navBlog,
                 ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
             )
- 
+            3 -> ImageViewCompat.setImageTintList(
+                dataBind.navProfile,
+                ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+            )
+        }
+
+    }
+
+    private fun loadFragment(fragment: Fragment?, newPosition: Int): Boolean {
+        if (fragment != null) {
+            val transaction: FragmentTransaction = childFragmen

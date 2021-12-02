@@ -90,4 +90,11 @@ class DashboardFragment : Fragment(), View.OnClickListener {
 
     private fun loadFragment(fragment: Fragment?, newPosition: Int): Boolean {
         if (fragment != null) {
-            val transaction: FragmentTransaction = childFragmen
+            val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+            if (startingPosition > newPosition) {
+                transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
+            }
+            if (startingPosition < newPosition) {
+                transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
+            }
+            transaction.replace(R.id.frame_container, f

@@ -97,4 +97,20 @@ class DashboardFragment : Fragment(), View.OnClickListener {
             if (startingPosition < newPosition) {
                 transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
             }
-            transaction.replace(R.id.frame_container, f
+            transaction.replace(R.id.frame_container, fragment)
+            transaction.commit()
+            startingPosition = newPosition
+            viewModel.bottomNavPosition = startingPosition
+            return true
+        }
+
+        return false
+    }
+
+    private fun loadFragmentFromBottomNav(itemId: Int): Boolean {
+        var fragment: Fragment? = null
+        var position = 0
+
+        when (itemId) {
+
+            R.id.nav_ho

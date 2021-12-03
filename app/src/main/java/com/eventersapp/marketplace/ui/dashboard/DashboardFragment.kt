@@ -133,4 +133,15 @@ class DashboardFragment : Fragment(), View.OnClickListener {
             }
             R.id.nav_blog -> {
                 resetBottomNavActionButtonColor()
-                ImageV
+                ImageViewCompat.setImageTintList(
+                    dataBind.navBlog,
+                    ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+                )
+                fragment = BlogFragment()
+                position = 2
+            }
+
+            R.id.nav_profile -> {
+                resetBottomNavActionButtonColor()
+                ImageViewCompat.setImageTintList(
+           

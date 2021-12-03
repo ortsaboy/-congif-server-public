@@ -144,4 +144,17 @@ class DashboardFragment : Fragment(), View.OnClickListener {
             R.id.nav_profile -> {
                 resetBottomNavActionButtonColor()
                 ImageViewCompat.setImageTintList(
-           
+                    dataBind.navProfile,
+                    ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+                )
+                fragment = ProfileFragment()
+                position = 3
+            }
+
+        }
+
+        return loadFragment(fragment, position)
+    }
+
+    private fun resetBottomNavActionButtonColor() {
+        ImageViewCompat.setImageTintL

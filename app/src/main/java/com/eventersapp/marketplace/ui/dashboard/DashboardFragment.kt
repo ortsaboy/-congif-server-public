@@ -113,4 +113,14 @@ class DashboardFragment : Fragment(), View.OnClickListener {
 
         when (itemId) {
 
-            R.id.nav_ho
+            R.id.nav_home -> {
+                resetBottomNavActionButtonColor()
+                ImageViewCompat.setImageTintList(
+                    dataBind.navHome,
+                    ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+                )
+                fragment = HomeFragment()
+                position = 0
+            }
+            R.id.nav_scan -> {
+                r

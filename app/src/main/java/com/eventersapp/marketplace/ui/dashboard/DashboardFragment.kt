@@ -123,4 +123,14 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 position = 0
             }
             R.id.nav_scan -> {
-                r
+                resetBottomNavActionButtonColor()
+                ImageViewCompat.setImageTintList(
+                    dataBind.navScan,
+                    ColorStateList.valueOf(requireActivity().color(R.color.colorAccent))
+                )
+                fragment = ScanFragment()
+                position = 1
+            }
+            R.id.nav_blog -> {
+                resetBottomNavActionButtonColor()
+                ImageV

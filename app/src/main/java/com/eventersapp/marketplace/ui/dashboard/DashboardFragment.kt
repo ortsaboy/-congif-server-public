@@ -167,4 +167,13 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         )
         ImageViewCompat.setImageTintList(
             dataBind.navBlog,
-            ColorStateList.valueOf(requir
+            ColorStateList.valueOf(requireActivity().color(R.color.gray))
+        )
+        ImageViewCompat.setImageTintList(
+            dataBind.navProfile,
+            ColorStateList.valueOf(requireActivity().color(R.color.gray))
+        )
+    }
+
+
+}

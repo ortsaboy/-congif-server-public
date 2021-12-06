@@ -81,3 +81,107 @@ class ProfileFragment : Fragment(), KodeinAware, View.OnClickListener {
         fetchSelectedAddressFromDb()
         dataBind.inputProfileAddress.setOnClickListener(this)
         dataBind.textAccountSettings.setOnClickListener(this)
+    }
+
+    private fun initializeObserver() {
+        viewModel.accountAddressLiveData.observe(viewLifecycleOwner, Observer {
+            if (it.isNotBlank()) {
+                dataBind.inputProfileAddress.setText(it)
+            }
+        })
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun setupAPICall() {
+        viewModel.logoutLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                }
+                is State.Success -> {
+                    requireActivity().showToast("Logout")
+                    SharedPref.clearPref(requireContext())
+                    findNavController().navigate(R.id.action_dashboardFragment_to_signupScreenFragment)
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+
+        viewModel.profileDetailLiveData.observe(viewLifecycleOwner, Observer { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    var googleImageUrl = ""
+                    var fbImageUrl = ""
+                    var phoneNumber = ""
+                    var accountAddress = ""
+
+                    state.data.data.user.let {
+                        googleImageUrl = it.gImageUrl
+                        fbImageUrl = it.fbImageUrl
+                        phoneNumber = it.phoneCountryCode + it.phoneNumber
+                    }
+
+                    when {
+                        googleImageUrl != null -> {
+                            AppUtils.setGlideRoundedImage(
+                                dataBind.imageProfileUser,
+                                googleImageUrl
+                            )
+                            state.data.data.user.let {
+                                dataBind.textUserName.text = it.gName
+                                dataBind.inputProfileEmail.setText(it.gEmail)
+                                dataBind.inputProfilePhoneNumber.setText(phoneNumber)
+                            }
+
+                        }
+                        fbImageUrl != null -> {
+                            AppUtils.setGlideRoundedImage(
+                                dataBind.imageProfileUser,
+                                fbImageUrl
+                            )
+                            state.data.data.user.let {
+                                dataBind.textUserName.text = it.fbName
+                                dataBind.inputProfileEmail.setText(it.fbEmail)
+                                dataBind.inputProfilePhoneNumber.setText(phoneNumber)
+                            }
+                        }
+                        else -> {
+                            dataBind.imageProfileUser.setImageResource(R.drawable.user)
+                            state.data.data.user.let {
+                                dataBind.inputProfilePhoneNumber.setText(phoneNumber)
+                            }
+                        }
+                    }
+
+
+
+                    AppUtils.hideProgressBar()
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+    }
+
+    private fun setDeviceInfo() {
+        viewModel.setDeviceInfo(requireContext().deviceId())
+    }
+
+    private fun getJWTToken() {
+        val userId = AppUtils.getUserPreference(requireContext())?.data?.user?.userId?.toInt()
+        viewModel.getJWTToken(userId ?: -1)
+    }
+
+    private fun fetchSelectedAddressFromDb() {
+        viewModel.fetchSelectedAddressFromDb()
+    }
+
+
+}

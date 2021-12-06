@@ -157,4 +157,14 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     }
 
     private fun resetBottomNavActionButtonColor() {
-        ImageViewCompat.setImageTintL
+        ImageViewCompat.setImageTintList(
+            dataBind.navHome,
+            ColorStateList.valueOf(requireActivity().color(R.color.gray))
+        )
+        ImageViewCompat.setImageTintList(
+            dataBind.navScan,
+            ColorStateList.valueOf(requireActivity().color(R.color.gray))
+        )
+        ImageViewCompat.setImageTintList(
+            dataBind.navBlog,
+            ColorStateList.valueOf(requir

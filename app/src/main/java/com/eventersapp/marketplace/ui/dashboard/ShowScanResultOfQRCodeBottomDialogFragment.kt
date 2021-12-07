@@ -24,4 +24,15 @@ class ShowScanResultOfQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
         }
     }
 
-    private lateinit var dataBind: Show
+    private lateinit var dataBind: ShowScanResultOfQrCodeBottomSheetBinding
+    private var scanResult = ""
+
+    override fun getTheme(): Int = R.style.BottomSheetDialogTheme
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return BottomSheetDialog(requireContext(), theme)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sc

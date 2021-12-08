@@ -47,4 +47,20 @@ class ShowScanResultOfQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
         dataBind = DataBindingUtil.inflate(
             inflater,
             R.layout.show_scan_result_of_qr_code_bottom_sheet,
-        
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.text_close_bottom_sheet -> {
+                dismiss()
+            }
+            R.id.button_copy_res

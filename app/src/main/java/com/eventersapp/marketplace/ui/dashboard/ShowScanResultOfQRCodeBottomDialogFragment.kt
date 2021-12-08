@@ -35,4 +35,16 @@ class ShowScanResultOfQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sc
+        scanResult = arguments?.getString("scan_result") ?: ""
+    }
+
+    @Nullable
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        @Nullable container: ViewGroup?,
+        @Nullable savedInstanceState: Bundle?
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.show_scan_result_of_qr_code_bottom_sheet,
+        

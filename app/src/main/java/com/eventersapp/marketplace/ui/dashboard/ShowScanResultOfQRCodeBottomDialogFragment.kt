@@ -63,4 +63,19 @@ class ShowScanResultOfQRCodeBottomDialogFragment : BottomSheetDialogFragment(),
             R.id.text_close_bottom_sheet -> {
                 dismiss()
             }
-            R.id.button_copy_res
+            R.id.button_copy_result -> {
+                requireContext().copyToClipboard(scanResult)
+                requireContext().showToast("Text copied to clipboard")
+                dismiss()
+            }
+        }
+    }
+
+    private fun setupUI() {
+        dataBind.textScanResult.text = scanResult
+        dataBind.textCloseBottomSheet.setOnClickListener(this)
+        dataBind.buttonCopyResult.setOnClickListener(this)
+    }
+
+
+}

@@ -32,4 +32,14 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
     private val viewModel: AccountSettingsViewModel by lazy {
         ViewModelProvider(this, factory).get(AccountSettingsViewModel::class.java)
     }
-    private latein
+    private lateinit var myAccount: Account
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (arguments?.getSerializable("account_detail") != null)
+            myAccount = arguments?.getSerializable("account_detail") as Account
+        customAdapterRekeyAccount = CustomAdapterRekeyAccount()
+        fetchRekeyAccounts()
+    }
+
+    

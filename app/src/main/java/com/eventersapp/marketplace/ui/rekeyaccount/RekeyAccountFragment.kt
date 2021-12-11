@@ -15,4 +15,15 @@ import com.eventersapp.marketplace.R
 import com.eventersapp.marketplace.data.model.Account
 import com.eventersapp.marketplace.databinding.FragmentRekeyAccountBinding
 import com.eventersapp.marketplace.ui.adapter.CustomAdapterRekeyAccount
-import com.eventersapp.mark
+import com.eventersapp.marketplace.ui.viewmodel.AccountSettingsViewModel
+import com.eventersapp.marketplace.ui.viewmodelfactory.AccountSettingsViewModelFactory
+import com.eventersapp.marketplace.util.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
+
+
+class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
+
+    override val kodein by closestKodein()
+    priv

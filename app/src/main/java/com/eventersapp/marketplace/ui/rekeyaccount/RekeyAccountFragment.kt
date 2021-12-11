@@ -26,4 +26,10 @@ import org.kodein.di.generic.instance
 class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
 
     override val kodein by closestKodein()
-    priv
+    private lateinit var dataBind: FragmentRekeyAccountBinding
+    private lateinit var customAdapterRekeyAccount: CustomAdapterRekeyAccount
+    private val factory: AccountSettingsViewModelFactory by instance()
+    private val viewModel: AccountSettingsViewModel by lazy {
+        ViewModelProvider(this, factory).get(AccountSettingsViewModel::class.java)
+    }
+    private latein

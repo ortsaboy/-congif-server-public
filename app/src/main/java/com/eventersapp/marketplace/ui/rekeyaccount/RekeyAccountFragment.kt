@@ -9,4 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recy
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.eventersapp.marketplace.R
+import com.eventersapp.marketplace.data.model.Account
+import com.eventersapp.marketplace.databinding.FragmentRekeyAccountBinding
+import com.eventersapp.marketplace.ui.adapter.CustomAdapterRekeyAccount
+import com.eventersapp.mark

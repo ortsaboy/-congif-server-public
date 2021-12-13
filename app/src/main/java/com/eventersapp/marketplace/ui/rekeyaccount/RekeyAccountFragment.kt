@@ -42,4 +42,18 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
         fetchRekeyAccounts()
     }
 
-    
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_rekey_account,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInsta

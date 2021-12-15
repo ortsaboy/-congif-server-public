@@ -56,4 +56,20 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
         return dataBind.root
     }
 
-    override fun onViewCreated(view: View, savedInsta
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        initializeObserver()
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.fab_add_new_account -> {
+                findNavController().navigate(R.id.action_rekeyAccountFragment_to_addNewAccountFragment)
+            }
+        }
+    }
+
+
+    private fun setupUI() {
+        (ac

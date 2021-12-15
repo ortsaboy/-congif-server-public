@@ -72,4 +72,12 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
 
 
     private fun setupUI() {
-        (ac
+        (activity as AppCompatActivity?)?.setSupportActionBar(dataBind.toolbar)
+        dataBind.toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        dataBind.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+        val mLayoutManager = LinearLayoutManager(activity)
+        dataBind.recyclerViewAccount.apply {
+            layoutManager = mLayoutManager
+     

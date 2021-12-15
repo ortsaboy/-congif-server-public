@@ -80,4 +80,14 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
         val mLayoutManager = LinearLayoutManager(activity)
         dataBind.recyclerViewAccount.apply {
             layoutManager = mLayoutManager
-     
+            itemAnimator = DefaultItemAnimator()
+            adapter = customAdapterRekeyAccount
+        }
+        dataBind.fabAddNewAccount.setOnClickListener(this)
+        dataBind.recyclerViewAccount.addOnItemTouchListener(
+            RecyclerTouchListener(
+                activity,
+                dataBind.recyclerViewAccount,
+                object : RecyclerTouchListener.ClickListener {
+
+            

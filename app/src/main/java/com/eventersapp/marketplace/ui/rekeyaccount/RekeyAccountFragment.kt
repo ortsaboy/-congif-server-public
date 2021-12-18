@@ -121,4 +121,11 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 is State.Loading -> {
                     AppUtils.showProgressBar(requireContext())
                 }
-                is Stat
+                is State.Success -> {
+                    viewModel.updateRekeyAccountDetail(
+                        myAccount.id,
+                        myAccount.name,
+                        myAccount.accountAddress,
+                        customAdapterRekeyAccount.currentList[viewModel.getRekeyAccountAdapterPosition()].passphrase,
+                        myAccount.isSelected
+                    )

@@ -111,4 +111,14 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 dataBind.recyclerViewAccount.hide()
                 dataBind.textClickOnPlus.show()
             } else {
-                dat
+                dataBind.recyclerViewAccount.show()
+                dataBind.textClickOnPlus.hide()
+            }
+            customAdapterRekeyAccount.submitList(it)
+        })
+        viewModel.rekeyAccountLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is Stat

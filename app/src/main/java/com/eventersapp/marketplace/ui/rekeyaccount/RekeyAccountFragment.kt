@@ -98,4 +98,17 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                         )
                     }
 
-             
+                    override fun onLongClick(view: View?, position: Int) {
+
+                    }
+                })
+        )
+    }
+
+    private fun initializeObserver() {
+        viewModel.rekeyAccountListLiveData.observe(viewLifecycleOwner, EventObserver {
+            if (it.isEmpty()) {
+                dataBind.recyclerViewAccount.hide()
+                dataBind.textClickOnPlus.show()
+            } else {
+                dat

@@ -90,4 +90,12 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 dataBind.recyclerViewAccount,
                 object : RecyclerTouchListener.ClickListener {
 
-            
+                    override fun onClick(view: View?, position: Int) {
+                        viewModel.setRekeyAccountAdapterPosition(position)
+                        viewModel.rekeyAccount(
+                            myAccount.passphrase,
+                            customAdapterRekeyAccount.currentList[position].accountAddress
+                        )
+                    }
+
+             

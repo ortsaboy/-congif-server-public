@@ -141,4 +141,11 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 is State.Loading -> {
 
                 }
-                is Sta
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("${myAccount.name} is successfully rekey to ${customAdapterRekeyAccount.currentList[viewModel.getRekeyAccountAdapterPosition()].name}")
+                    findNavController().popBackStack()
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+ 

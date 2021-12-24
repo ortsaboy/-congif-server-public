@@ -148,4 +148,14 @@ class RekeyAccountFragment : Fragment(), KodeinAware, View.OnClickListener {
                 }
                 is State.Error -> {
                     AppUtils.hideProgressBar()
- 
+                    requireActivity().showToast(state.message)
+                }
+            }
+        })
+    }
+
+    private fun fetchRekeyAccounts() {
+        viewModel.fetchRekeyAccounts(myAccount)
+    }
+
+}

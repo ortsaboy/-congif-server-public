@@ -21,4 +21,12 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
-import java.securi
+import java.security.Security;
+
+public class SubmitTx {
+
+    public static TransactionID rekeyAccount(String mnemonics, String rekeyToAddress) throws GeneralSecurityException {
+        final String ALGOD_API_ADDR = "<ALGO_API-ADDR>"; //Replace with your algo api address
+        final String ALGOD_API_TOKEN = "<ALGO_API-TOKEN>"; //Replace with your algo api token
+
+        final String SRC_ACCOUNT =

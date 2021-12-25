@@ -29,4 +29,14 @@ public class SubmitTx {
         final String ALGOD_API_ADDR = "<ALGO_API-ADDR>"; //Replace with your algo api address
         final String ALGOD_API_TOKEN = "<ALGO_API-TOKEN>"; //Replace with your algo api token
 
-        final String SRC_ACCOUNT =
+        final String SRC_ACCOUNT = mnemonics;
+
+        //Setup HTTP client w/guest key provided by PureStake
+        AlgodClient client = new AlgodClient();
+
+        client.addDefaultHeader("X-API-Key", ALGOD_API_TOKEN);
+
+        client.setBasePath(ALGOD_API_ADDR);
+        // Configure API key authorization: api_key
+        ApiKeyAuth api_key = (ApiKeyAuth) client.getAuthentication("api_key");
+        api_key.setApiKey(ALGOD_API

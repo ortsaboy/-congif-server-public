@@ -39,4 +39,14 @@ public class SubmitTx {
         client.setBasePath(ALGOD_API_ADDR);
         // Configure API key authorization: api_key
         ApiKeyAuth api_key = (ApiKeyAuth) client.getAuthentication("api_key");
-        api_key.setApiKey(ALGOD_API
+        api_key.setApiKey(ALGOD_API_TOKEN);
+
+        AlgodApi algodApiInstance = new AlgodApi(client);
+        Security.removeProvider("BC");
+        Security.insertProviderAt(new BouncyCastleProvider(), 0);
+        Account src = new Account(SRC_ACCOUNT);
+        Log.i("Info", "My Address: " + src.getAddress());
+        Log.i("Info", "RekeyTo Address: " + rekeyToAddress);
+
+        BigInteger feePerByte;
+ 

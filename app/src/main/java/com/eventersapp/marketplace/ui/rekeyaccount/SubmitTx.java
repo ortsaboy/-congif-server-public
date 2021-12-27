@@ -58,4 +58,13 @@ public class SubmitTx {
             genesisHash = new Digest(params.getGenesishashb64());
             genesisID = params.getGenesisID();
             Log.i("Info", "Suggested Fee: " + feePerByte);
-   
+            NodeStatus s = algodApiInstance.getStatus();
+            firstRound = s.getLastRound().longValue();
+            Log.i("Info", "Current Round: " + firstRound);
+        } catch (ApiException e) {
+            Log.e("Error", "Could not get params" + e);
+            throw new RuntimeException("Could not get params", e);
+        }
+
+        long amount = 0;
+        long lastRound = first

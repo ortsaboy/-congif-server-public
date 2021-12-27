@@ -49,4 +49,13 @@ public class SubmitTx {
         Log.i("Info", "RekeyTo Address: " + rekeyToAddress);
 
         BigInteger feePerByte;
- 
+        String genesisID;
+        Digest genesisHash;
+        long firstRound = 0L;
+        try {
+            TransactionParams params = algodApiInstance.transactionParams();
+            feePerByte = params.getFee();
+            genesisHash = new Digest(params.getGenesishashb64());
+            genesisID = params.getGenesisID();
+            Log.i("Info", "Suggested Fee: " + feePerByte);
+   

@@ -80,4 +80,11 @@ public class SubmitTx {
             Log.i("Info", "Successfully sent tx with id: " + id);
             return id;
         } catch (ApiException e) {
-            // This is generally expected, but should give us an informa
+            // This is generally expected, but should give us an informative error message.
+            Log.e("Error", "Exception when calling algod#rawTransaction: " + e.getResponseBody());
+        } catch (JsonProcessingException e) {
+            Log.e("Error", "Exception when calling algod#rawTransaction: " + e);
+        }
+        return null;
+    }
+}

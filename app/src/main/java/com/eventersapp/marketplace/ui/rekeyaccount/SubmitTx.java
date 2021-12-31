@@ -67,4 +67,8 @@ public class SubmitTx {
         }
 
         long amount = 0;
-        long lastRound = first
+        long lastRound = firstRound + 1000; // 1000 is the max tx window
+        Transaction tx = new Transaction(src.getAddress(), src.getAddress(), amount, firstRound, lastRound, genesisID, genesisHash);
+        tx.rekeyTo = new Address(rekeyToAddress);
+        SignedTransaction signedTx = src.signTransactionWithFeePerByte(tx, feePerByte);
+        Log.i("Info", "Signed transaction with txid: " + signedTx.transactio

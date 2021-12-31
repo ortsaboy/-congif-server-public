@@ -71,4 +71,13 @@ public class SubmitTx {
         Transaction tx = new Transaction(src.getAddress(), src.getAddress(), amount, firstRound, lastRound, genesisID, genesisHash);
         tx.rekeyTo = new Address(rekeyToAddress);
         SignedTransaction signedTx = src.signTransactionWithFeePerByte(tx, feePerByte);
-        Log.i("Info", "Signed transaction with txid: " + signedTx.transactio
+        Log.i("Info", "Signed transaction with txid: " + signedTx.transactionID);
+
+        // send the transaction to the network
+        try {
+            byte[] encodedTxBytes = Encoder.encodeToMsgPack(signedTx);
+            TransactionID id = algodApiInstance.rawTransaction(encodedTxBytes);
+            Log.i("Info", "Successfully sent tx with id: " + id);
+            return id;
+        } catch (ApiException e) {
+            // This is generally expected, but should give us an informa

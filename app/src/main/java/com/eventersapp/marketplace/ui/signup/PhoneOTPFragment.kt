@@ -23,4 +23,13 @@ import org.kodein.di.generic.instance
 class PhoneOTPFragment : Fragment(), KodeinAware {
 
     override val kodein by closestKodein()
-    priv
+    private lateinit var dataBind: PhoneOtpFragmentBinding
+    private val factory: PhoneOTPViewModelFactory by instance()
+    private val viewModel: PhoneOTPViewModel by lazy {
+        ViewModelProvider(this, factory).get(PhoneOTPViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let { arguments ->
+            val p

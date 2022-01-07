@@ -42,4 +42,18 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): Vie
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.phone_otp_fragment,
+            container,
+            false
+        )
+        dataBind.viewmodel = viewModel
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+  

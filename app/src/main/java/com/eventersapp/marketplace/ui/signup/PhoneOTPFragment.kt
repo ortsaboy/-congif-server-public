@@ -32,4 +32,14 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let { arguments ->
-            val p
+            val phoneNumber = arguments.getString("phone_number") ?: ""
+            val countryCode = arguments.getString("country_code") ?: ""
+            setDeviceInfo()
+            sendVerificationCode(Pair(countryCode, phoneNumber))
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): Vie

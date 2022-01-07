@@ -56,4 +56,21 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
-  
+        initializeObserver()
+        setupAPICall()
+    }
+
+    private fun setupUI() {
+        addTextChangedListenerOnEditText()
+    }
+
+    private fun initializeObserver() {
+        viewModel.messageLiveData.observe(viewLifecycleOwner, EventObserver {
+            if (it.isNotBlank()) {
+                dataBind.rootLayout.snackbar(it)
+            }
+        })
+    }
+
+    private fun setupAPICall() {
+ 

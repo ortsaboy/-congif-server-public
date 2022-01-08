@@ -80,4 +80,16 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                 }
                 is State.Success -> {
                     AppUtils.hideProgressBar()
-                    requireActivity().showToast("OTP has been 
+                    requireActivity().showToast("OTP has been sent to the given phone number")
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }
+        })
+
+        viewModel.otpVerificationStatusLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+  

@@ -73,4 +73,11 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
     }
 
     private fun setupAPICall() {
- 
+        viewModel.otpStatusLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("OTP has been 

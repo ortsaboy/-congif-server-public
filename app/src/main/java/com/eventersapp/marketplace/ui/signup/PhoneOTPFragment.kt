@@ -92,4 +92,13 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
         viewModel.otpVerificationStatusLiveData.observe(viewLifecycleOwner, EventObserver { state ->
             when (state) {
                 is State.Loading -> {
-  
+                    AppUtils.showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    requireActivity().showToast("OTP verification successful")
+                    connect()
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+          

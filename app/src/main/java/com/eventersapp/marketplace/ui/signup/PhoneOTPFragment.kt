@@ -101,4 +101,15 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                 is State.Error -> {
                     AppUtils.hideProgressBar()
                     dataBind.rootLayout.snackbar(state.message)
-          
+                }
+            }
+        })
+
+        viewModel.connectLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                }
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("Login Successful")
+                    SharedP

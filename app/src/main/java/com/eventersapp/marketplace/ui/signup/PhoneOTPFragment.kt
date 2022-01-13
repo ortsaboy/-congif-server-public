@@ -112,4 +112,13 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                 is State.Success -> {
                     AppUtils.hideProgressBar()
                     requireActivity().showToast("Login Successful")
-                    SharedP
+                    SharedPref.setObjectPref(
+                        requireContext(),
+                        SharedPref.KEY_USER_DATA,
+                        state.data
+                    )
+                    findNavController().navigate(R.id.action_phoneOTPFragment_to_dashboardFragment)
+                }
+                is State.Error -> {
+                    AppUtils.hideProgressBar()
+                    dataBi

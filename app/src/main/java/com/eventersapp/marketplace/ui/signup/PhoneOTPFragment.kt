@@ -155,4 +155,18 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
     }
 
     private fun connect() {
-        val userId = SharedPref.getStringPref(requireContext(), Share
+        val userId = SharedPref.getStringPref(requireContext(), SharedPref.KEY_USER_ID)
+        val provider = SharedPref.getStringPref(requireContext(), SharedPref.KEY_PROVIDER)
+        var id = -1
+        if (userId != "") {
+            id = userId.toInt()
+        }
+        viewModel.getJWTToken(provider, id)
+    }
+
+
+    private fun setDeviceInfo() {
+        viewModel.setDeviceInfo(requireContext().deviceId(), requireContext().manufacturer())
+    }
+
+    private fun addTe

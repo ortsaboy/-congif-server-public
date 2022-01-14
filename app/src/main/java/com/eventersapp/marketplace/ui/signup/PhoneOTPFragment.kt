@@ -141,4 +141,18 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                     findNavController().navigate(R.id.action_phoneOTPFragment_to_dashboardFragment)
                 }
                 is State.Error -> {
-         
+                    AppUtils.hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }
+        })
+    }
+
+    private fun sendVerificationCode(
+        number: Pair<String, String>
+    ) {
+        viewModel.sendVerificationCode(number)
+    }
+
+    private fun connect() {
+        val userId = SharedPref.getStringPref(requireContext(), Share

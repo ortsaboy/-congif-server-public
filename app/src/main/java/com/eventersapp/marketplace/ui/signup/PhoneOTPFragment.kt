@@ -121,4 +121,15 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                 }
                 is State.Error -> {
                     AppUtils.hideProgressBar()
-                    dataBi
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }
+        })
+
+        viewModel.verifiedNumberLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                }
+                is State.Success -> {
+                    AppUtils.hideProgressBar()
+                    requireActivity().showToast("Login

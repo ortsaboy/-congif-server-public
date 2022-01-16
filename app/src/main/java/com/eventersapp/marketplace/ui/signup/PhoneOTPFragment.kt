@@ -198,4 +198,13 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
             }
 
-            override fun onTextCha
+            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable) {
+                if (editable.length == 1)
+                    dataBind.inputOtpBox4.requestFocus()
+            }
+        })
+        dataBind.inputOtpBox4.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int

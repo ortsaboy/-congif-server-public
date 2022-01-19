@@ -16,4 +16,11 @@ import com.eventersapp.marketplace.ui.viewmodel.SignupViewModel
 import com.eventersapp.marketplace.ui.viewmodelfactory.SignupViewModelFactory
 import com.eventersapp.marketplace.util.*
 import com.eventersapp.marketplace.util.AppConstants.FACEBOOK
-import com.eventersapp.marketplace.util
+import com.eventersapp.marketplace.util.AppConstants.GOOGLE
+import com.eventersapp.marketplace.util.AppConstants.MOBILE_NUMBER_VERIFICATION
+import com.eventersapp.marketplace.util.AppUtils.hideProgressBar
+import com.eventersapp.marketplace.util.AppUtils.showProgressBar
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookExce

@@ -229,4 +229,7 @@ class PhoneOTPFragment : Fragment(), KodeinAware {
                 if (editable.length == 1)
                     dataBind.inputOtpBox6.requestFocus()
             }
-      
+        })
+    }
+
+}

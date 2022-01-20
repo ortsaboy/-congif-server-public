@@ -31,4 +31,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import org.kodein.di.KodeinAware
-import org.kodein.di.and
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
+
+
+class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
+
+    companion object {
+        const val GOOGLE_SIGN_IN = 101
+    }
+
+    override val kodein by closestKodein()
+    private lateinit var dataBind: SignupScreenFragmentBinding
+    private val factory: SignupViewModelFactory by instance()
+    private val viewModel:

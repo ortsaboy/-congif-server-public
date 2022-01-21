@@ -54,4 +54,20 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializeGoogleSigin()
-        setDevic
+        setDeviceInfo()
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        dataBind = DataBindingUtil.inflate(
+            inflater,
+            R.layout.signup_screen_fragment,
+            container,
+            false
+        )
+        return dataBind.root
+    }
+
+    override fun onViewCreated(view: View, savedIns

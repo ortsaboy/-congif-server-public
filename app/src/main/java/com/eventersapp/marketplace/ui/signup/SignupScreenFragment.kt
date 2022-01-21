@@ -44,4 +44,14 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
     override val kodein by closestKodein()
     private lateinit var dataBind: SignupScreenFragmentBinding
     private val factory: SignupViewModelFactory by instance()
-    private val viewModel:
+    private val viewModel: SignupViewModel by lazy {
+        ViewModelProvider(this, factory).get(SignupViewModel::class.java)
+    }
+
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var callbackManager: CallbackManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initializeGoogleSigin()
+        setDevic

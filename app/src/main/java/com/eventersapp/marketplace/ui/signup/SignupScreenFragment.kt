@@ -84,4 +84,16 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
             R.id.button_google_sign_in -> {
                 googleSignIn()
             }
-            R.id.bu
+            R.id.button_phone_number -> {
+                findNavController().navigate(
+                    R.id.action_signupScreenFragment_to_phoneNumberFragment
+                )
+            }
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == GOOGLE_SIGN_IN) {
+            val task = Goog

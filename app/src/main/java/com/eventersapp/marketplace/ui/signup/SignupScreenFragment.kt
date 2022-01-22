@@ -70,4 +70,18 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
         return dataBind.root
     }
 
-    override fun onViewCreated(view: View, savedIns
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
+        setupAPICall()
+    }
+
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.button_facebook_sign_in -> {
+                dataBind.fbLoginButton.performClick()
+            }
+            R.id.button_google_sign_in -> {
+                googleSignIn()
+            }
+            R.id.bu

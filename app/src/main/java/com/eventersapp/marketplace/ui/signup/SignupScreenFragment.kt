@@ -96,4 +96,10 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == GOOGLE_SIGN_IN) {
-            val task = Goog
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                Log.i("Info", "firebaseAuthWithGoogle:" + account?.id)
+                viewModel.firebaseAuthWithGoogle(account?.idToken ?: "")
+            } catch (e: ApiException) {
+                Log.i("Info", "Goo

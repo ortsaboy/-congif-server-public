@@ -115,4 +115,15 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
         dataBind.buttonFacebookSignIn.setOnClickListener(this)
         dataBind.buttonGoogleSignIn.setOnClickListener(this)
         dataBind.buttonPhoneNumber.setOnClickListener(this)
-   
+        facebookSignIn()
+    }
+
+    private fun setupAPICall() {
+        viewModel.googleSignLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    requireActivity().showToast("Google sign in successful")
+                    S

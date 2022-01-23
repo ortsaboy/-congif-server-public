@@ -102,4 +102,17 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                 Log.i("Info", "firebaseAuthWithGoogle:" + account?.id)
                 viewModel.firebaseAuthWithGoogle(account?.idToken ?: "")
             } catch (e: ApiException) {
-                Log.i("Info", "Goo
+                Log.i("Info", "Google sign in failed", e)
+            }
+        } else {
+            // Pass the activity result back to the Facebook SDK
+            callbackManager.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+
+    private fun setupUI() {
+        dataBind.buttonFacebookSignIn.setOnClickListener(this)
+        dataBind.buttonGoogleSignIn.setOnClickListener(this)
+        dataBind.buttonPhoneNumber.setOnClickListener(this)
+   

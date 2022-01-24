@@ -126,4 +126,15 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                 }
                 is State.Success -> {
                     requireActivity().showToast("Google sign in successful")
-                    S
+                    SharedPref.setStringPref(
+                        requireContext(),
+                        SharedPref.KEY_PROVIDER,
+                        GOOGLE
+                    )
+                    connect()
+                }
+                is State.Error -> {
+                    hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }

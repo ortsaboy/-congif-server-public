@@ -138,3 +138,13 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                     dataBind.rootLayout.snackbar(state.message)
                 }
             }
+        })
+
+        viewModel.facebookSignLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                    showProgressBar(requireContext())
+                }
+                is State.Success -> {
+                    requireActivity().showToast("Facebook sign in successful")
+ 

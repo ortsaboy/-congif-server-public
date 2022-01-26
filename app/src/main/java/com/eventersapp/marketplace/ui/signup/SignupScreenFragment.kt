@@ -147,4 +147,16 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                 }
                 is State.Success -> {
                     requireActivity().showToast("Facebook sign in successful")
- 
+                    SharedPref.setStringPref(
+                        requireContext(),
+                        SharedPref.KEY_PROVIDER,
+                        FACEBOOK
+                    )
+                    connect()
+                }
+                is State.Error -> {
+                    hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }
+        }

@@ -177,4 +177,13 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                             R.id.action_signupScreenFragment_to_phoneNumberFragment
                         )
                     } else {
-                        S
+                        SharedPref.setObjectPref(
+                            requireContext(),
+                            SharedPref.KEY_USER_DATA,
+                            state.data
+                        )
+                        findNavController().navigate(R.id.action_signupScreenFragment_to_dashboardFragment)
+                    }
+                }
+                is State.Error -> {
+                    hideProgressB

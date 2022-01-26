@@ -168,4 +168,13 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                 is State.Success -> {
                     hideProgressBar()
                     if (state.data.data.auth != null && state.data.data.auth.status == MOBILE_NUMBER_VERIFICATION) {
-                        Shared
+                        SharedPref.setStringPref(
+                            requireContext(),
+                            SharedPref.KEY_USER_ID,
+                            state.data.data.user.userId
+                        )
+                        findNavController().navigate(
+                            R.id.action_signupScreenFragment_to_phoneNumberFragment
+                        )
+                    } else {
+                        S

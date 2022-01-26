@@ -159,4 +159,13 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                     dataBind.rootLayout.snackbar(state.message)
                 }
             }
-        }
+        })
+
+        viewModel.connectLiveData.observe(viewLifecycleOwner, EventObserver { state ->
+            when (state) {
+                is State.Loading -> {
+                }
+                is State.Success -> {
+                    hideProgressBar()
+                    if (state.data.data.auth != null && state.data.data.auth.status == MOBILE_NUMBER_VERIFICATION) {
+                        Shared

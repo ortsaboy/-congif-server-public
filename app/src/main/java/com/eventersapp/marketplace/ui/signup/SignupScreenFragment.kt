@@ -186,4 +186,17 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
                     }
                 }
                 is State.Error -> {
-                    hideProgressB
+                    hideProgressBar()
+                    dataBind.rootLayout.snackbar(state.message)
+                }
+            }
+        })
+    }
+
+    private fun initializeGoogleSigin() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInC

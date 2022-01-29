@@ -221,4 +221,15 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
             }
 
             override fun onCancel() {
-     
+                Log.i("Info", "facebook:onCancel")
+            }
+
+            override fun onError(error: FacebookException) {
+                Log.i("Info", "facebook:onError", error)
+            }
+        })
+    }
+
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        Log.i("Info", "handleFacebookAccessToken:$token")
+        viewModel.firebaseAuthWithFaceboo

@@ -199,4 +199,17 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
             .requestEmail()
             .build()
 
-        googleSignInC
+        googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
+    }
+
+
+    private fun googleSignIn() {
+        val signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, GOOGLE_SIGN_IN)
+    }
+
+    private fun facebookSignIn() {
+        LoginManager.getInstance().logOut()
+        callbackManager = CallbackManager.Factory.create()
+
+        dataBind.fbLoginB

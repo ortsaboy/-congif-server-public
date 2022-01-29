@@ -212,4 +212,13 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
         LoginManager.getInstance().logOut()
         callbackManager = CallbackManager.Factory.create()
 
-        dataBind.fbLoginB
+        dataBind.fbLoginButton.fragment = this
+        dataBind.fbLoginButton.registerCallback(callbackManager, object :
+            FacebookCallback<LoginResult> {
+            override fun onSuccess(loginResult: LoginResult) {
+                Log.i("Info", "facebook:onSuccess:$loginResult")
+                handleFacebookAccessToken(loginResult.accessToken)
+            }
+
+            override fun onCancel() {
+     

@@ -232,4 +232,16 @@ class SignupScreenFragment : Fragment(), KodeinAware, View.OnClickListener {
 
     private fun handleFacebookAccessToken(token: AccessToken) {
         Log.i("Info", "handleFacebookAccessToken:$token")
-        viewModel.firebaseAuthWithFaceboo
+        viewModel.firebaseAuthWithFacebook(token)
+    }
+
+    private fun connect() {
+        viewModel.getJWTToken()
+    }
+
+
+    private fun setDeviceInfo() {
+        viewModel.setDeviceInfo(requireContext().deviceId(), requireContext().manufacturer())
+    }
+
+}

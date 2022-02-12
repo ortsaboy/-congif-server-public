@@ -24,4 +24,16 @@ class Walkthrough : OnboarderActivity() {
         val onboarderPage2 =
             OnboarderPage(
                 "Personalised Website",
-                "Your stories and memories in one place
+                "Your stories and memories in one place, to share with the world",
+                R.drawable.onboard_couple_img
+            )
+        val onboarderPage3 =
+            OnboarderPage(
+                "Event Shelf",
+                "Manage all your event invites in one place with smart notification",
+                R.drawable.onboard_calender_img
+            )
+
+        onboarderPage1.setTitleColor(R.color.black)
+        onboarderPage1.setDescriptionColor(R.color.black)
+      

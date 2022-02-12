@@ -36,4 +36,10 @@ class Walkthrough : OnboarderActivity() {
 
         onboarderPage1.setTitleColor(R.color.black)
         onboarderPage1.setDescriptionColor(R.color.black)
-      
+        onboarderPage2.setTitleColor(R.color.black)
+        onboarderPage2.setDescriptionColor(R.color.black)
+        onboarderPage3.setTitleColor(R.color.black)
+        onboarderPage3.setDescriptionColor(R.color.black)
+        onboarderPage1.setBackgroundColor(R.color.white)
+        onboarderPage2.setBackgroundColor(R.color.white)
+        onboarderPage

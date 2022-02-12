@@ -42,4 +42,11 @@ class Walkthrough : OnboarderActivity() {
         onboarderPage3.setDescriptionColor(R.color.black)
         onboarderPage1.setBackgroundColor(R.color.white)
         onboarderPage2.setBackgroundColor(R.color.white)
-        onboarderPage
+        onboarderPage3.setBackgroundColor(R.color.white)
+        (onboarderPages as ArrayList<OnboarderPage>).add(onboarderPage1)
+        (onboarderPages as ArrayList<OnboarderPage>).add(onboarderPage2)
+        (onboarderPages as ArrayList<OnboarderPage>).add(onboarderPage3)
+        setActiveIndicatorColor(R.color.colorAccent)
+        shouldUseFloatingActionButton(true)
+        setOnboardPagesReady(onboarderPages)
+        setSki

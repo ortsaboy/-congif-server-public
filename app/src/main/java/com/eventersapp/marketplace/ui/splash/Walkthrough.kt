@@ -49,4 +49,10 @@ class Walkthrough : OnboarderActivity() {
         setActiveIndicatorColor(R.color.colorAccent)
         shouldUseFloatingActionButton(true)
         setOnboardPagesReady(onboarderPages)
-        setSki
+        setSkipButtonTitle("Skip")
+    }
+
+    override fun onFinishButtonPressed() {
+        goToActivity(HostActivity::class.java)
+    }
+}

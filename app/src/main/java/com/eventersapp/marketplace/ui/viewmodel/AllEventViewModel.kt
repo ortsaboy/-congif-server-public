@@ -62,3 +62,8 @@ class AllEventViewModel(private val repository: AllEventRepository) :
             )
         )
     }
+
+    fun refreshAllEventListData() {
+        getAllEventList()
+    }
+}

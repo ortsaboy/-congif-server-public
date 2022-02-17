@@ -32,4 +32,15 @@ class BackupPassphraseViewModel : ViewModel() {
     private val _passphraseListLiveData =
         MutableLiveData<ArrayList<String>>()
     val passphraseListLiveData: LiveData<ArrayList<String>>
-        get() = _pas
+        get() = _passphraseListLiveData
+
+    private val _randomPassphraseListLiveData =
+        MutableLiveData<ArrayList<String>>()
+    val randomPassphraseListLiveData: LiveData<ArrayList<String>>
+        get() = _randomPassphraseListLiveData
+
+    private val passphrase = ArrayList<String>()
+    private val randomPassphrase = ArrayList<String>()
+
+    fun generatePassPhrase() {
+        Security.removeProvider("BC")

@@ -22,4 +22,14 @@ class BackupPassphraseViewModel : ViewModel() {
     private var accountAddress = ""
 
     private val _messageLiveData = MutableLiveData<Event<String>>()
-    val mes
+    val messageLiveData: LiveData<Event<String>>
+        get() = _messageLiveData
+
+    private val _questionCountLiveData = MutableLiveData<Event<Int>>()
+    val questionCountLiveData: LiveData<Event<Int>>
+        get() = _questionCountLiveData
+
+    private val _passphraseListLiveData =
+        MutableLiveData<ArrayList<String>>()
+    val passphraseListLiveData: LiveData<ArrayList<String>>
+        get() = _pas

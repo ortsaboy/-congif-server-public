@@ -44,3 +44,14 @@ class BackupPassphraseViewModel : ViewModel() {
 
     fun generatePassPhrase() {
         Security.removeProvider("BC")
+        Security.insertProviderAt(BouncyCastleProvider(), 0)
+        val myAccount = Account()
+        accountAddress = myAccount.address.encodeAsString()
+        passphraseStr = myAccount.toMnemonic()
+        passphrase.clear()
+        passphrase.addAll(passphraseStr.split(" ").toList())
+        _passphraseListLiveData.postValue(passphrase)
+    }
+
+    fun onVerifyRecoveryButtonClick(view: View) {
+  

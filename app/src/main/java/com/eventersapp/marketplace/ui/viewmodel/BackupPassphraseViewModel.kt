@@ -54,4 +54,13 @@ class BackupPassphraseViewModel : ViewModel() {
     }
 
     fun onVerifyRecoveryButtonClick(view: View) {
-  
+        Navigation.findNavController(view)
+            .navigate(R.id.action_backupPassphraseFragment_to_verifyRecoveryPhraseFragment)
+    }
+
+    fun showRandomPassphraseList(count: Int) {
+        questionCount = count
+        randomPassphrase.clear()
+        randomNumber = (0..24).random()
+        question.value = "Question $questionCount of 3"
+        selectPassPhrase.value = "Select the ${(randomNumb

@@ -63,4 +63,11 @@ class BackupPassphraseViewModel : ViewModel() {
         randomPassphrase.clear()
         randomNumber = (0..24).random()
         question.value = "Question $questionCount of 3"
-        selectPassPhrase.value = "Select the ${(randomNumb
+        selectPassPhrase.value = "Select the ${(randomNumber + 1)} word of your passphrase"
+        Log.i("Info", "Word = ${passphrase[randomNumber]}")
+        randomPassphrase.add(passphrase[randomNumber])
+        val uniqueSetList = mutableSetOf<String>()
+        while (uniqueSetList.size < 16) { // Change the no. if you want more random words
+            val item = (0..24).random()
+            if (item != randomNumber)
+                uniqueS

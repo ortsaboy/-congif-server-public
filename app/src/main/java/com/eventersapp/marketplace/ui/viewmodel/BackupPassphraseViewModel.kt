@@ -81,4 +81,16 @@ class BackupPassphraseViewModel : ViewModel() {
     }
 
     fun checkPassphraseWord(selectedPassphrase: String) {
-        if (selectedPassphrase == passphrase[randomNumb
+        if (selectedPassphrase == passphrase[randomNumber]) {
+            _messageLiveData.postValue(Event("Correct choice"))
+            questionCount++
+            if (questionCount < 4) {
+                showRandomPassphraseList(questionCount)
+            }
+            _questionCountLiveData.postValue(Event(questionCount))
+        } else {
+            _messageLiveData.postValue(Event("Wrong choice"))
+        }
+    }
+
+    fun getPassphrase() = passphraseStr

@@ -70,4 +70,15 @@ class BackupPassphraseViewModel : ViewModel() {
         while (uniqueSetList.size < 16) { // Change the no. if you want more random words
             val item = (0..24).random()
             if (item != randomNumber)
-                uniqueS
+                uniqueSetList.add(passphrase[item])
+        }
+        Log.i("Info", "uniqueSetList = $uniqueSetList")
+        for (word in uniqueSetList) {
+            randomPassphrase.add(word)
+        }
+        randomPassphrase.shuffle()
+        _randomPassphraseListLiveData.postValue(randomPassphrase)
+    }
+
+    fun checkPassphraseWord(selectedPassphrase: String) {
+        if (selectedPassphrase == passphrase[randomNumb

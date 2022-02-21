@@ -94,3 +94,6 @@ class BackupPassphraseViewModel : ViewModel() {
     }
 
     fun getPassphrase() = passphraseStr
+
+    fun getAccountAddress() = accountAddress
+}

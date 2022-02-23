@@ -15,4 +15,13 @@ import kotlinx.coroutines.withContext
 class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel() {
 
 
-    private var fireb
+    private var firebaseUserToken = ""
+    private var deviceId = ""
+    private var toUserId = -1
+    private var publicEventId = -1
+
+    private var connectResponse: ConnectResponse? = null
+    private var buyNormalTicketEventPostBody: BuyNormalTicketEventPostBody =
+        BuyNormalTicketEventPostBody()
+    private var buyResellTicketEventPostBody: BuyResellTicketEventPostBody =
+        Bu

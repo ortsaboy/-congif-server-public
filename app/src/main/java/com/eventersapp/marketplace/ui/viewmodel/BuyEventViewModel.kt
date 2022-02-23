@@ -33,4 +33,11 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
     private val _buyNormalTicketEventLiveData =
         MutableLiveData<Event<State<BuyTicketEventResponse>>>()
     val buyNormalTicketEventLiveData: LiveData<Event<State<BuyTicketEventResponse>>>
-        get() = _b
+        get() = _buyNormalTicketEventLiveData
+    private lateinit var buyNormalTicketEventResponse: BuyTicketEventResponse
+
+    private val _buyResellTicketEventLiveData =
+        MutableLiveData<Event<State<BuyTicketEventResponse>>>()
+    val buyResellTicketEventLiveData: LiveData<Event<State<BuyTicketEventResponse>>>
+        get() = _buyResellTicketEventLiveData
+    private lateinit var buyResellTicketEventResponse: BuyTicketEventResponse

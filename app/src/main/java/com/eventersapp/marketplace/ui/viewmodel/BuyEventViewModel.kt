@@ -41,3 +41,13 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
     val buyResellTicketEventLiveData: LiveData<Event<State<BuyTicketEventResponse>>>
         get() = _buyResellTicketEventLiveData
     private lateinit var buyResellTicketEventResponse: BuyTicketEventResponse
+
+    fun buyNormalTicket() {
+        _buyNormalTicketEventLiveData.postValue(Event(State.loading()))
+        buyNormalTicketEventPostBody = buyNormalTicketEventPostBodyJson()
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                buyNormalTicketEventResponse =
+                    repository.buyNormalTicket(buyNormalTicketEventPostBody)
+                withContext(Dispatchers.Main) {
+     

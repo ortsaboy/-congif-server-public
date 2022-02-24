@@ -60,4 +60,15 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
                 }
             } catch (e: ApiException) {
                 withContext(Dispatchers.Main) {
-                    _buyNor
+                    _buyNormalTicketEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            } catch (e: NoInternetException) {
+                withContext(Dispatchers.Main) {
+                    _buyNormalTicketEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            }
+        }
+    }
+
+    fun buyResellTicket(eventTicketId: Int) {
+        _buyResellTicketEventLiveData.post

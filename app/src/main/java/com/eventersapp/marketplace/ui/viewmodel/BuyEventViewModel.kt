@@ -71,4 +71,11 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
     }
 
     fun buyResellTicket(eventTicketId: Int) {
-        _buyResellTicketEventLiveData.post
+        _buyResellTicketEventLiveData.postValue(Event(State.loading()))
+        buyResellTicketEventPostBody = buyResellTicketEventPostBodyJson(eventTicketId)
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                buyResellTicketEventResponse =
+                    repository.buyResellTicket(buyResellTicketEventPostBody)
+                withContext(Dispatchers.Main) {
+                    _buyResellTicketEventLiveDat

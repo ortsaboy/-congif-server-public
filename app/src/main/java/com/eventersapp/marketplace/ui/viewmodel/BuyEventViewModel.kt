@@ -78,4 +78,14 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
                 buyResellTicketEventResponse =
                     repository.buyResellTicket(buyResellTicketEventPostBody)
                 withContext(Dispatchers.Main) {
-                    _buyResellTicketEventLiveDat
+                    _buyResellTicketEventLiveData.postValue(
+                        Event(
+                            State.success(
+                                buyResellTicketEventResponse
+                            )
+                        )
+                    )
+                }
+            } catch (e: ApiException) {
+                withContext(Dispatchers.Main) {
+                    _buyResellTicketEventLiveData.postValue(Event(State.e

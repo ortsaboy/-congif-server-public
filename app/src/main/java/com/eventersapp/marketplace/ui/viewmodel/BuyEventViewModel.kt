@@ -88,4 +88,15 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
                 }
             } catch (e: ApiException) {
                 withContext(Dispatchers.Main) {
-                    _buyResellTicketEventLiveData.postValue(Event(State.e
+                    _buyResellTicketEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            } catch (e: NoInternetException) {
+                withContext(Dispatchers.Main) {
+                    _buyResellTicketEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            }
+        }
+    }
+
+    private fun buyNormalTicketEventPostBodyJson(): BuyNormalTicketEventPostBody {
+        val authen = BuyNormalT

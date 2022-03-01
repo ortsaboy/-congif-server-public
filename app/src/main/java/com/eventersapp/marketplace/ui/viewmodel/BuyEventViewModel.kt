@@ -99,4 +99,14 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
     }
 
     private fun buyNormalTicketEventPostBodyJson(): BuyNormalTicketEventPostBody {
-        val authen = BuyNormalT
+        val authen = BuyNormalTicketEventPostBody().Auth()
+        authen.let {
+            it.deviceId = deviceId
+            it.tokenId = firebaseUserToken
+            it.authType = ResellOrSendEventViewModel.ONLINE
+            it.userId = connectResponse?.data?.user?.userId!!.toInt()
+            it.pushKey = ""
+        }
+        val ticket = BuyNormalTicketEventPostBody().Ticket()
+        ticket.let {
+            it.publicEventId = p

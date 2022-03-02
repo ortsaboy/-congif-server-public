@@ -109,4 +109,15 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
         }
         val ticket = BuyNormalTicketEventPostBody().Ticket()
         ticket.let {
-            it.publicEventId = p
+            it.publicEventId = publicEventId
+            it.toUserId = toUserId
+        }
+        val data = BuyNormalTicketEventPostBody().Data()
+        data.auth = authen
+        data.ticket = ticket
+        buyNormalTicketEventPostBody.data = data
+        return buyNormalTicketEventPostBody
+    }
+
+    private fun buyResellTicketEventPostBodyJson(eventTicketId: Int): BuyResellTicketEventPostBody {
+        val a

@@ -142,4 +142,17 @@ class BuyEventViewModel(private val repository: BuyEventRepository) : ViewModel(
     }
 
     fun setUserInfo(
-        allEvent: AllEventListResponse.Da
+        allEvent: AllEventListResponse.Data,
+        userData: ConnectResponse?,
+        id: String
+    ) {
+        connectResponse = userData
+        deviceId = id
+        toUserId = connectResponse?.data?.user?.userId!!.toInt()
+        publicEventId = allEvent.publicEvent.publicEventId
+        viewModelScope.launch(Dispatchers.IO) {
+            firebaseUserToken = getFirebaseUserToken()
+        }
+    }
+
+}

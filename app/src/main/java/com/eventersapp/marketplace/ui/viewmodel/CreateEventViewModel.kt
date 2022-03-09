@@ -19,4 +19,18 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
 
     companion object {
         const val ONLINE = "online"
-  
+    }
+
+    var eventTitle: String? = null
+    var eventDescription: String? = null
+    var totalTickets: String? = null
+    var ticketPrice: String? = null
+    var ticketImage: String? = null
+
+    private var firebaseUserToken = ""
+    private var deviceId = ""
+    private var filePath = ""
+    private var mediaName = ""
+    private var mediaPath = ""
+
+    private var connectResponse:

@@ -54,4 +54,13 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
             eventTitle.isNullOrEmpty() -> {
                 _messageLiveData.postValue(Event("Event title should not be empty!"))
                 return
-           
+            }
+            eventDescription.isNullOrEmpty() -> {
+                _messageLiveData.postValue(Event("Event description should not be empty!"))
+                return
+            }
+            totalTickets.isNullOrEmpty() -> {
+                _messageLiveData.postValue(Event("Total tickets should not be empty!"))
+                return
+            }
+            totalTickets!!.toInt() == 0 -> {

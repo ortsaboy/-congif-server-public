@@ -33,4 +33,12 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
     private var mediaName = ""
     private var mediaPath = ""
 
-    private var connectResponse:
+    private var connectResponse: ConnectResponse? = null
+    private var createEventPostBody: CreateEventPostBody = CreateEventPostBody()
+
+    private val _messageLiveData = MutableLiveData<Event<String>>()
+    val messageLiveData: LiveData<Event<String>>
+        get() = _messageLiveData
+    private val _createEventLiveData =
+        MutableLiveData<Event<State<CreateEventResponse>>>()
+    val createEventLiveData: LiveData<Event<State<Cr

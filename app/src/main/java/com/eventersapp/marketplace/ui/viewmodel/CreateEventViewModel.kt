@@ -41,4 +41,17 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
         get() = _messageLiveData
     private val _createEventLiveData =
         MutableLiveData<Event<State<CreateEventResponse>>>()
-    val createEventLiveData: LiveData<Event<State<Cr
+    val createEventLiveData: LiveData<Event<State<CreateEventResponse>>>
+        get() = _createEventLiveData
+    private lateinit var createEventResponse: CreateEventResponse
+
+    init {
+        mediaPath = "public_event/"
+    }
+
+    fun onSubmitButtonClick(view: View) {
+        when {
+            eventTitle.isNullOrEmpty() -> {
+                _messageLiveData.postValue(Event("Event title should not be empty!"))
+                return
+           

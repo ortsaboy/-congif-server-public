@@ -64,3 +64,12 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
                 return
             }
             totalTickets!!.toInt() == 0 -> {
+                _messageLiveData.postValue(Event("Total tickets should not be zero!"))
+                return
+            }
+            totalTickets!!.toInt() > 499 -> {
+                _messageLiveData.postValue(Event("Total tickets should not be less then 500!"))
+                return
+            }
+            ticketPrice.isNullOrEmpty() -> {
+                _messageLiveData.postValue(Event("Ticket pr

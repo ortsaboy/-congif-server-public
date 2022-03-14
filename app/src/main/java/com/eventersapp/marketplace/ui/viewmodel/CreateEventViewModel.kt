@@ -72,4 +72,16 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
                 return
             }
             ticketPrice.isNullOrEmpty() -> {
-                _messageLiveData.postValue(Event("Ticket pr
+                _messageLiveData.postValue(Event("Ticket price should not be empty!"))
+                return
+            }
+            ticketPrice!!.toInt() == 0 -> {
+                _messageLiveData.postValue(Event("Ticket price should be greater then zero!"))
+                return
+            }
+            ticketImage.isNullOrEmpty() -> {
+                _messageLiveData.postValue(Event("Please select image!"))
+                return
+            }
+        }
+        _createEventLiveData.postV

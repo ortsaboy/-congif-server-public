@@ -103,4 +103,22 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
                 }
             } catch (e: NoInternetException) {
                 withContext(Dispatchers.Main) {
-                    _createEventLiveData.postValue(Event(St
+                    _createEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            }
+        }
+    }
+
+    fun setUserInfo(
+        userData: ConnectResponse?,
+        id: String
+    ) {
+        connectResponse = userData
+        deviceId = id
+    }
+
+    private fun createEventPostBodyJson(): CreateEventPostBody {
+        val authen = CreateEventPostBody().Auth()
+        authen.let {
+            it.deviceId = deviceId
+            it.tokenId

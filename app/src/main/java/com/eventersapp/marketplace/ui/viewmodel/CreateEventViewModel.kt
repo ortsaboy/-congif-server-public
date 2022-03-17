@@ -95,4 +95,12 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
             try {
                 createEventResponse = repository.createEvent(createEventPostBody)
                 withContext(Dispatchers.Main) {
-                    _createEventLiveData.postValue(Eve
+                    _createEventLiveData.postValue(Event(State.success(createEventResponse)))
+                }
+            } catch (e: ApiException) {
+                withContext(Dispatchers.Main) {
+                    _createEventLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            } catch (e: NoInternetException) {
+                withContext(Dispatchers.Main) {
+                    _createEventLiveData.postValue(Event(St

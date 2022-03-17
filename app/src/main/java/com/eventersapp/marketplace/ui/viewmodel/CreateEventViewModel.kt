@@ -84,4 +84,15 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
                 return
             }
         }
-        _createEventLiveData.postV
+        _createEventLiveData.postValue(Event(State.loading()))
+        getJWTToken()
+
+    }
+
+    private fun createEvent() {
+        createEventPostBody = createEventPostBodyJson()
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                createEventResponse = repository.createEvent(createEventPostBody)
+                withContext(Dispatchers.Main) {
+                    _createEventLiveData.postValue(Eve

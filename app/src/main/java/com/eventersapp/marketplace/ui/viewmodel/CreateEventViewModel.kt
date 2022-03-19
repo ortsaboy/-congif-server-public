@@ -130,4 +130,13 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
         publicEvent.let {
             it.dateTime = AppUtils.getDateTime()
             it.eventDescription = eventDescription
-            it.eventTitle 
+            it.eventTitle = eventTitle
+            it.eventImage =
+                if (filePath.isNotEmpty()) AppConstants.S3URL + mediaPath + mediaName else ""
+            it.ticketPrice = ticketPrice!!.toInt()
+            it.totalTickets = totalTickets!!.toInt()
+        }
+        val data = CreateEventPostBody().Data()
+        data.auth = authen
+        data.publicEvent = publicEvent
+        createEventPostBody.data = 

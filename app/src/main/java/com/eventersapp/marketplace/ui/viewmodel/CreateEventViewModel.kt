@@ -121,4 +121,13 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
         val authen = CreateEventPostBody().Auth()
         authen.let {
             it.deviceId = deviceId
-            it.tokenId
+            it.tokenId = firebaseUserToken
+            it.authType = ONLINE
+            it.userId = connectResponse?.data?.user?.userId!!.toInt()
+            it.pushKey = ""
+        }
+        val publicEvent = CreateEventPostBody().PublicEvent()
+        publicEvent.let {
+            it.dateTime = AppUtils.getDateTime()
+            it.eventDescription = eventDescription
+            it.eventTitle 

@@ -139,4 +139,23 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
         val data = CreateEventPostBody().Data()
         data.auth = authen
         data.publicEvent = publicEvent
-        createEventPostBody.data = 
+        createEventPostBody.data = data
+        return createEventPostBody
+    }
+
+    private fun getJWTToken() {
+        viewModelScope.launch(Dispatchers.IO) {
+            firebaseUserToken = getFirebaseUserToken()
+            withContext(Dispatchers.Main) {
+                createEvent()
+            }
+        }
+
+    }
+
+    fun setFilePath(path: String) {
+        filePath = path
+        ticketImage = filePath
+    }
+
+    fun

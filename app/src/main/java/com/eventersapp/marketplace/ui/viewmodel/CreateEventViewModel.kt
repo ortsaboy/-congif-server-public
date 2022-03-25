@@ -158,4 +158,15 @@ class CreateEventViewModel(private val repository: CreateEventRepository) : View
         ticketImage = filePath
     }
 
-    fun
+    fun getFilePath() = filePath
+
+    fun setMediaName(name: String) {
+        mediaName = name
+        mediaName = AppUtils.getDateTime() + "_" + mediaName
+    }
+
+    fun getMediaName() = mediaName
+
+    fun getMediaPath() = mediaPath
+
+}

@@ -8,4 +8,15 @@ import com.eventersapp.marketplace.data.model.MyEventListResponse
 import com.eventersapp.marketplace.data.repositories.MyEventRepository
 import com.eventersapp.marketplace.util.ApiException
 import com.eventersapp.marketplace.util.Event
-import co
+import com.eventersapp.marketplace.util.NoInternetException
+import com.eventersapp.marketplace.util.State
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class MyEventViewModel(private val repository: MyEventRepository) : ViewModel() {
+
+    private var myEventList = ArrayList<MyEventListResponse.Data?>()
+    var isMyEventApiCalled = false
+
+    private val _myEventLis

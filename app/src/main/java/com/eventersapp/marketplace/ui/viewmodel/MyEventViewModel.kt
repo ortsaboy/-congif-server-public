@@ -28,4 +28,13 @@ class MyEventViewModel(private val repository: MyEventRepository) : ViewModel() 
 
 
     fun getMyEventList(userId: Int) {
-        _myEventListLiveData.postValue(Event(St
+        _myEventListLiveData.postValue(Event(State.loading()))
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                myEventListResponse = repository.myEvent(userId)
+                withContext(Dispatchers.Main) {
+                    if (myEventListResponse.data != null) {
+                        myEventList.addAll(myEventListResponse.data)
+                    }
+                    isMyEventApiCalled = true
+                    _myEventListLiveData

@@ -19,4 +19,13 @@ class MyEventViewModel(private val repository: MyEventRepository) : ViewModel() 
     private var myEventList = ArrayList<MyEventListResponse.Data?>()
     var isMyEventApiCalled = false
 
-    private val _myEventLis
+    private val _myEventListLiveData =
+        MutableLiveData<Event<State<ArrayList<MyEventListResponse.Data?>>>>()
+    val myEventListLiveData: LiveData<Event<State<ArrayList<MyEventListResponse.Data?>>>>
+        get() = _myEventListLiveData
+
+    private lateinit var myEventListResponse: MyEventListResponse
+
+
+    fun getMyEventList(userId: Int) {
+        _myEventListLiveData.postValue(Event(St

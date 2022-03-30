@@ -37,4 +37,12 @@ class MyEventViewModel(private val repository: MyEventRepository) : ViewModel() 
                         myEventList.addAll(myEventListResponse.data)
                     }
                     isMyEventApiCalled = true
-                    _myEventListLiveData
+                    _myEventListLiveData.postValue(Event(State.success(myEventList)))
+                }
+            } catch (e: ApiException) {
+                withContext(Dispatchers.Main) {
+                    _myEventListLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            } catch (e: NoInternetException) {
+                withContext(Dispatchers.Main) {
+                    _myEventListLiveData.postValue(Event(State.erro

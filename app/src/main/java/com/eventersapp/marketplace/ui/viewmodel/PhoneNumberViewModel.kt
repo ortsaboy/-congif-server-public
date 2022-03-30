@@ -44,3 +44,11 @@ class PhoneNumberViewModel : ViewModel() {
                     "country_code" to countryCode
                 )
             )
+
+    }
+
+    fun setCountryCode(phoneCode: String) {
+        countryCode = "+$phoneCode"
+    }
+
+}

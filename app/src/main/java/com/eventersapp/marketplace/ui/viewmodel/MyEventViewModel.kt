@@ -45,4 +45,23 @@ class MyEventViewModel(private val repository: MyEventRepository) : ViewModel() 
                 }
             } catch (e: NoInternetException) {
                 withContext(Dispatchers.Main) {
-                    _myEventListLiveData.postValue(Event(State.erro
+                    _myEventListLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            }
+        }
+    }
+
+    fun getLoadedMyEventsList() {
+        _myEventListLiveData.postValue(
+            Event(
+                State.success(
+                    myEventList
+                )
+            )
+        )
+    }
+
+    fun refreshMyEventListData(userId: Int) {
+        getMyEventList(userId)
+    }
+}

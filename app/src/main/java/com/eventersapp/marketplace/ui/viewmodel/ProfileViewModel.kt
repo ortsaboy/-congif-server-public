@@ -21,4 +21,14 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
 
     private var deviceId = ""
     private var userId = -1
-   
+    private var firebaseUserToken = ""
+    var isProfileApiCalled = false
+
+    private var logoutPostBody: LogoutPostBody = LogoutPostBody()
+
+    private val _logoutLiveData = MutableLiveData<Event<State<LogoutResponse>>>()
+    val logoutLiveData: LiveData<Event<State<LogoutResponse>>>
+        get() = _logoutLiveData
+
+    private val _profileDetailLiveData = MutableLiveData<State<ProfileResponse>>()
+    val profileD

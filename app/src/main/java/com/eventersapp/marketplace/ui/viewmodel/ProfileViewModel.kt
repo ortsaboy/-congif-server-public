@@ -42,4 +42,14 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
     private lateinit var profileResponse: ProfileResponse
 
     private fun getProfileDetail() {
-        viewModelS
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                profileResponse = repository.getProfile(userId, firebaseUserToken)
+                withContext(Dispatchers.Main) {
+                    isProfileApiCalled = true
+                    fetchSelectedAddressFromDb()
+                    _profileDetailLiveData.postValue(
+                        State.success(
+                            profileResponse
+
+              

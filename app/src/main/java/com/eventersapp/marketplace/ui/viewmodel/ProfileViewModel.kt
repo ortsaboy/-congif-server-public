@@ -10,4 +10,15 @@ import com.eventersapp.marketplace.data.model.LogoutResponse
 import com.eventersapp.marketplace.data.model.ProfileResponse
 import com.eventersapp.marketplace.data.repositories.ProfileRepository
 import com.eventersapp.marketplace.util.*
-import com.evente
+import com.eventersapp.marketplace.util.AppConstants.OFFLINE
+import com.facebook.login.LoginManager
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() {
+
+    private var deviceId = ""
+    private var userId = -1
+   

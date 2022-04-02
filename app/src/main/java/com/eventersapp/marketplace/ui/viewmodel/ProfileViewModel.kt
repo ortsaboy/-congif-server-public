@@ -31,4 +31,15 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
         get() = _logoutLiveData
 
     private val _profileDetailLiveData = MutableLiveData<State<ProfileResponse>>()
-    val profileD
+    val profileDetailLiveData: LiveData<State<ProfileResponse>>
+        get() = _profileDetailLiveData
+
+    private val _accountAddressLiveData = MutableLiveData<String>()
+    val accountAddressLiveData: LiveData<String>
+        get() = _accountAddressLiveData
+
+    private lateinit var logoutResponse: LogoutResponse
+    private lateinit var profileResponse: ProfileResponse
+
+    private fun getProfileDetail() {
+        viewModelS

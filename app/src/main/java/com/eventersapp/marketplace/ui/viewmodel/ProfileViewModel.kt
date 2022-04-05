@@ -75,4 +75,14 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
             try {
                 logoutResponse = repository.logout(logoutPostBody)
                 FirebaseAuth.getInstance().signOut()
-                LoginManager.getIn
+                LoginManager.getInstance().logOut()
+                withContext(Dispatchers.Main) {
+                    isProfileApiCalled = false
+                    deleteAllRecordsFromDb()
+                }
+            } catch (e: ApiException) {
+                withContext(Dispatchers.Main) {
+                    _logoutLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            } catch (e: NoInternetException) {
+                withCont

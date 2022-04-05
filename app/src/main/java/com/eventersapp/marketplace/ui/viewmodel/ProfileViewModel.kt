@@ -52,4 +52,15 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
                         State.success(
                             profileResponse
 
-              
+                        )
+                    )
+
+                }
+            } catch (e: ApiException) {
+                withContext(Dispatchers.Main) {
+                    _profileDetailLiveData.postValue(State.error(e.message!!))
+                }
+            } catch (e: NoInternetException) {
+                withContext(Dispatchers.Main) {
+                    _profileDetailLiveData.postValue(State.error(e.message!!))
+            

@@ -63,4 +63,16 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
             } catch (e: NoInternetException) {
                 withContext(Dispatchers.Main) {
                     _profileDetailLiveData.postValue(State.error(e.message!!))
-            
+                }
+            }
+        }
+    }
+
+    fun onLogoutButtonClick(view: View) {
+        _logoutLiveData.postValue(Event(State.loading()))
+        logoutPostBody = createLogoutPostBodyJson()
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                logoutResponse = repository.logout(logoutPostBody)
+                FirebaseAuth.getInstance().signOut()
+                LoginManager.getIn

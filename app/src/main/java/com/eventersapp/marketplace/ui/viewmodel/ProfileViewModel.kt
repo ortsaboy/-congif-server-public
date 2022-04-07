@@ -98,4 +98,18 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
             it.deviceId = deviceId
             it.tokenId = firebaseUserToken
             it.authType = OFFLINE
-      
+            it.userId = userId
+
+        }
+        val userDevice = LogoutPostBody().UserDevice()
+        userDevice.isValid = false
+        val data = LogoutPostBody().Data()
+        data.auth = authen
+        data.userDevice = userDevice
+        logoutPostBody.data = data
+        return logoutPostBody
+    }
+
+    private fun deleteAllRecordsFromDb() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo

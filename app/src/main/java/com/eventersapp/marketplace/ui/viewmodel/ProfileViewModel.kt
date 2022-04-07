@@ -85,4 +85,17 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
                     _logoutLiveData.postValue(Event(State.error(e.message!!)))
                 }
             } catch (e: NoInternetException) {
-                withCont
+                withContext(Dispatchers.Main) {
+                    _logoutLiveData.postValue(Event(State.error(e.message!!)))
+                }
+            }
+        }
+    }
+
+    private fun createLogoutPostBodyJson(): LogoutPostBody {
+        val authen = LogoutPostBody().Auth()
+        authen.let {
+            it.deviceId = deviceId
+            it.tokenId = firebaseUserToken
+            it.authType = OFFLINE
+      

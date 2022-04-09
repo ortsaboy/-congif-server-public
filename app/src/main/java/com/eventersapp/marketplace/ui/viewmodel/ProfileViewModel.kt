@@ -112,4 +112,18 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
 
     private fun deleteAllRecordsFromDb() {
         viewModelScope.launch(Dispatchers.IO) {
-            repo
+            repository.deleteAllTableRecordsFromDb()
+            withContext(Dispatchers.Main) {
+                _logoutLiveData.postValue(
+                    Event(
+                        State.success(
+                            logoutResponse
+                        )
+                    )
+                )
+            }
+        }
+    }
+
+    fun fetchSelectedAddressFromDb() {
+        viewModelScope.

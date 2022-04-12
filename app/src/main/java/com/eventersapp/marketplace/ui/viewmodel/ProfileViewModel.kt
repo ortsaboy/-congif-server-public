@@ -126,4 +126,15 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
     }
 
     fun fetchSelectedAddressFromDb() {
-        viewModelScope.
+        viewModelScope.launch(Dispatchers.IO) {
+            val account = repository.fetchSelectedAddressFromDb()
+            withContext(Dispatchers.Main) {
+                _accountAddressLiveData.postValue(account.accountAddress)
+            }
+        }
+    }
+
+    fun getJWTToken(id: Int) {
+        _profileDetailLiveData.postValue(State.loading())
+        userId = id
+        viewModelScope.launch(Dispatchers.IO)

@@ -137,4 +137,26 @@ class ProfileViewModel(private val repository: ProfileRepository) : ViewModel() 
     fun getJWTToken(id: Int) {
         _profileDetailLiveData.postValue(State.loading())
         userId = id
-        viewModelScope.launch(Dispatchers.IO)
+        viewModelScope.launch(Dispatchers.IO) {
+            firebaseUserToken = getFirebaseUserToken()
+            withContext(Dispatchers.Main) {
+                getProfileDetail()
+            }
+        }
+
+    }
+
+    fun setDeviceInfo(id: String) {
+        deviceId = id
+    }
+
+    fun getLoadedProfileData() {
+        _profileDetailLiveData.postValue(
+            State.success(
+                profileResponse
+
+            )
+        )
+    }
+
+}

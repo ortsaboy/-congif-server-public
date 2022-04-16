@@ -116,3 +116,25 @@ class SignupViewModel(private val repository: SignupRepository) : ViewModel() {
                 it.fbName = auth.currentUser?.displayName
                 it.fbFirebaseId = auth.currentUser?.uid.toString()
             }
+        }
+        val data = ConnectPostBody().Data()
+        data.auth = authen
+        data.user = user
+        connectPostBody.data = data
+        return connectPostBody
+    }
+
+    private fun getFCMToken() {
+        FirebaseInstanceId.getInstance()
+            .instanceId.addOnSuccessListener { instanceIdResult: InstanceIdResult ->
+                firebaseToken = instanceIdResult.token
+                Log.i("Info", "Firebase Token = $firebaseToken")
+            }
+    }
+
+    fun setDeviceInfo(id: String, modelName: String) {
+        deviceId = id
+        deviceName = modelName
+    }
+
+}

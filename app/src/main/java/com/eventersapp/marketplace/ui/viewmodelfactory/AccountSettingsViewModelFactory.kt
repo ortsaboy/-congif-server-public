@@ -11,4 +11,6 @@ class AccountSettingsViewModelFactory(
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        r
+        return AccountSettingsViewModel(repository) as T
+    }
+}

@@ -1,16 +1,17 @@
+
 package com.eventersapp.marketplace.ui.viewmodelfactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.eventersapp.marketplace.data.repositories.MyEventRepository
-import com.eventersapp.marketplace.ui.viewmodel.MyEventViewModel
+import com.eventersapp.marketplace.data.repositories.PhoneOTPRepository
+import com.eventersapp.marketplace.ui.viewmodel.PhoneOTPViewModel
 
 @Suppress("UNCHECKED_CAST")
-class MyEventViewModelFactory(
-    private val repository: MyEventRepository
+class PhoneOTPViewModelFactory(
+    private val repository: PhoneOTPRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return MyEventViewModel(repository) as T
+        return PhoneOTPViewModel(repository) as T
     }
 }

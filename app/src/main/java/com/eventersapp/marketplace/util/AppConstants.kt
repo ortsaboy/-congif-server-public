@@ -9,3 +9,14 @@ object AppConstants {
 
     //</editor-fold>
 
+    //<editor-fold desc="Commonly used constants">
+
+    const val S3URL = "<S3-URL>"//Replace with S3 url
+    const val BLOG_KEY = "<key>"//Replace with ghost blog key
+    const val PHONE = "phone"
+    const val GOOGLE = "google"
+    const val FACEBOOK = "facebook"
+    const val OFFLINE = "offline"
+    const val BUY_TICKET = "buy_ticket"
+    const val RESELL_BUY_TICKET = "resell_buy_ticket"
+    const val D

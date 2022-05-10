@@ -7,4 +7,10 @@ import com.eventersapp.marketplace.ui.viewmodel.SignupViewModel
 
 @Suppress("UNCHECKED_CAST")
 class SignupViewModelFactory(
-    privat
+    private val repository: SignupRepository
+) : ViewModelProvider.NewInstanceFactory() {
+
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        return SignupViewModel(repository) as T
+    }
+}

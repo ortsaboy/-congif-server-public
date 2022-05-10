@@ -10,4 +10,7 @@ class ResellOrSendEventViewModelFactory(
     private val repository: ResellOrSendEventRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
-    override fun <T : ViewModel?> create(modelClass: 
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        return ResellOrSendEventViewModel(repository) as T
+    }
+}

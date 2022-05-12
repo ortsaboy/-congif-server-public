@@ -19,4 +19,14 @@ object AppConstants {
     const val OFFLINE = "offline"
     const val BUY_TICKET = "buy_ticket"
     const val RESELL_BUY_TICKET = "resell_buy_ticket"
-    const val D
+    const val DISPLAY_DATE_FORMAT = "dd-MMM-yyyy, hh:mm a"
+    const val API_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    const val MOBILE_NUMBER_VERIFICATION = "MOBILE_NUMBER_VERIFICATION"
+    const val ARG_FILE_PATH = "file_path"
+    const val ARG_MEDIA_PATH = "media_path"
+    const val ARG_MEDIA_NAME = "media_name"
+
+
+    //</editor-fold>
+
+}

@@ -11,4 +11,15 @@ import android.provider.Settings
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import and
+import android.widget.Toast
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.util.regex.Pattern
+
+val EMAIL_PATTERN =
+    "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$"
+
+// used for simp

@@ -109,3 +109,30 @@ object AppUtils {
 
     fun getFirebaseProvider(auth: FirebaseAuth): String {
         var provider = ""
+        for (userInfo in auth.currentUser?.providerData!!) {
+            provider = when (userInfo.providerId) {
+                "facebook.com" -> AppConstants.FACEBOOK
+                "google.com" -> AppConstants.GOOGLE
+                else -> AppConstants.PHONE
+            }
+        }
+        return provider
+    }
+
+    //decode base64 string to image
+    fun base64StringToImage(eventImage: String): Bitmap? {
+        val imageBytes = Base64.decode(eventImage, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+    }
+
+    fun openCustomChromeTab(context: Context, url: String) {
+        val builder: CustomTabsIntent.Builder =
+            CustomTabsIntent.Builder()
+        val customTabsIntent: CustomTabsIntent = builder.build()
+        customTabsIntent.launchUrl(
+            context,
+            Uri.parse(url)
+        )
+
+    }
+}

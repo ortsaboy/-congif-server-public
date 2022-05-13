@@ -22,4 +22,16 @@ import java.util.regex.Pattern
 val EMAIL_PATTERN =
     "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$"
 
-// used for simp
+// used for simple start activity without Intent parameters
+fun Activity.goToActivity(newActivity: Class<*>) {
+    val intent = Intent(this, newActivity)
+    startActivity(intent)
+}
+
+// used for show a toast message in the UI Thread
+fun Context.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun Context.copyToClipboard(text: CharSequence) {
+    val clipboard

@@ -34,4 +34,17 @@ fun Context.showToast(message: String) {
 }
 
 fun Context.copyToClipboard(text: CharSequence) {
-    val clipboard
+    val clipboard = this.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText("label", text)
+    clipboard.setPrimaryClip(clip)
+}
+
+
+fun Context.openInBrowser(url: String) {
+    try {
+        val url = Uri.parse(url)
+        val intent = CustomTabsIntent.Builder()
+            .build()
+        intent.launchUrl(this, url)
+    } catch (e: Exception) {
+        e.m

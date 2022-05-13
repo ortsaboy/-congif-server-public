@@ -47,4 +47,20 @@ fun Context.openInBrowser(url: String) {
             .build()
         intent.launchUrl(this, url)
     } catch (e: Exception) {
-        e.m
+        e.message?.let { showToast(it) }
+    }
+}
+
+// used for validate if the current String is an email
+fun String.isValidEmail(): Boolean {
+    val pattern = Pattern.compile(EMAIL_PATTERN)
+    return pattern.matcher(this).matches()
+}
+
+fun Activity.screenWidth(): Int {
+    val metrics: DisplayMetrics = DisplayMetrics()
+    windowManager.defaultDisplay.getMetrics(metrics)
+    return metrics.widthPixels
+}
+
+fun Activity.sc

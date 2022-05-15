@@ -63,4 +63,18 @@ fun Activity.screenWidth(): Int {
     return metrics.widthPixels
 }
 
-fun Activity.sc
+fun Activity.screenHeight(): Int {
+    val metrics: DisplayMetrics = DisplayMetrics()
+    windowManager.defaultDisplay.getMetrics(metrics)
+    return metrics.heightPixels
+}
+
+fun Activity.color(resId: Int): Int {
+    return ContextCompat.getColor(this, resId)
+}
+
+
+// Transform simple object to String with Gson
+inline fun <reified T : Any> T.toPrettyJson(): String = Gson().toJson(this, T::class.java)
+
+// 

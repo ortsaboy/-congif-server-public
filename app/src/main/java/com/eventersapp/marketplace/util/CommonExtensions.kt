@@ -98,4 +98,28 @@ fun Context.dismissKeyboard(view: View?) {
 }
 
 fun View.snackbar(message: String) {
-    Snackbar.make(this, message, Snack
+    Snackbar.make(this, message, Snackbar.LENGTH_LONG).also { snackbar ->
+        snackbar.setAction("Ok") {
+            snackbar.dismiss()
+        }
+    }.show()
+}
+
+fun View.show() {
+    visibility = View.VISIBLE
+}
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
+}
+
+fun View.hide() {
+    visibility = View.GONE
+}
+
+fun Context.deviceId() = Settings.Secure.getString(
+    contentResolver,
+    Settings.Secure.ANDROID_ID
+)
+
+fun Context.manufac

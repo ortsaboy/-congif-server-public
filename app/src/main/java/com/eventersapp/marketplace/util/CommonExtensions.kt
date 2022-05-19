@@ -88,4 +88,14 @@ inline fun <reified T : Any> String.fromPrettyJsonList(): MutableList<T> =
     }
 
 /**
- * Use this 
+ * Use this to dismiss keyboards, can always wrap if you needed something else after dismissing
+ */
+fun Context.dismissKeyboard(view: View?) {
+    view?.let {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(it.windowToken, 0)
+    }
+}
+
+fun View.snackbar(message: String) {
+    Snackbar.make(this, message, Snack

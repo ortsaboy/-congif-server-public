@@ -29,4 +29,15 @@ open class Event<out T>(private val content: T) {
 
         other as Event<*>
 
-        if (content != ot
+        if (content != other.content) return false
+        if (consumed != other.consumed) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = content?.hashCode() ?: 0
+        result = 31 * result + consumed.hashCode()
+        return result
+    }
+}

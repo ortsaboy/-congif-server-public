@@ -122,4 +122,4 @@ fun Context.deviceId() = Settings.Secure.getString(
     Settings.Secure.ANDROID_ID
 )
 
-fun Context.manufac
+fun Context.manufacturer() = Build.MANUFACTURER

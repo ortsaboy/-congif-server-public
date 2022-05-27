@@ -40,4 +40,20 @@ class ProgressBar {
 
 
         dialog?.setCancelable(cancelable)
-        dialog?
+        dialog?.setCanceledOnTouchOutside(cancelable)
+        if (!dialog!!.isShowing) {
+            dialog!!.show()
+        }
+    }
+
+    fun dismissProgress() {
+        if (dialog != null && isDialogShowing()) {
+            dialog!!.dismiss()
+            dialog = null
+        }
+    }
+
+    fun isDialogShowing(): Boolean {
+        if (dialog != null) {
+            return dialog!!.isShowing
+     

@@ -31,4 +31,13 @@ class ProgressBar {
         dialog?.setContentView(R.layout.dialog_progress_bar)
 
         val layoutParams = WindowManager.LayoutParams()
-        layoutParams.c
+        layoutParams.copyFrom(dialog?.window?.attributes)
+        layoutParams.width = (context.resources.displayMetrics.widthPixels * 0.85).toInt()
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog?.window?.setLayout(layoutParams.width, layoutParams.height)
+
+
+        dialog?.setCancelable(cancelable)
+        dialog?

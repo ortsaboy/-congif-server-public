@@ -17,4 +17,18 @@ class ProgressBar {
 
         fun getInstance(): ProgressBar {
             if (gifProgress == null) {
-          
+                gifProgress = ProgressBar()
+            }
+            return gifProgress as ProgressBar
+        }
+
+    }
+
+    fun showProgress(context: Context, cancelable: Boolean) {
+        dialog = Dialog(context)
+
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.setContentView(R.layout.dialog_progress_bar)
+
+        val layoutParams = WindowManager.LayoutParams()
+        layoutParams.c

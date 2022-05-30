@@ -56,4 +56,7 @@ class ProgressBar {
     fun isDialogShowing(): Boolean {
         if (dialog != null) {
             return dialog!!.isShowing
-     
+        }
+        return false
+    }
+}

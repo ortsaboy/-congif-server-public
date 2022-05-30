@@ -11,4 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerTouchListener(
     context: Context?,
     recyclerView: RecyclerView,
-    private var cli
+    private var clickListener: ClickListener?
+) : RecyclerView.OnItemTouchListener {
+
+    private var gestureDetector: GestureDetector? = null
+
+    init {
+        gestureDetector = GestureDetector(context, object : SimpleOnGestureListener() {
+            override fun onSingleTapUp(e: MotionEvent): Boolean {
+                return true
+            }
+
+            override fun onLongPress(e: MotionEvent) {
+ 

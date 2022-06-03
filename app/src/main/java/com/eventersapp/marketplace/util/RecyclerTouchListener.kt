@@ -43,4 +43,15 @@ class RecyclerTouchListener(
         return false
     }
 
-    override fun onRequestDisallowInterceptTouchEvent(disallowIn
+    override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+
+    }
+
+
+    interface ClickListener {
+        fun onClick(view: View?, position: Int)
+        fun onLongClick(view: View?, position: Int)
+    }
+
+}
+

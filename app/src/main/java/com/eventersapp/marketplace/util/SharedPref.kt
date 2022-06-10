@@ -32,4 +32,16 @@ object SharedPref {
         return context.getSharedPreferences(
             EVENTERS_PREFERENCE,
             Context.MODE_PRIVATE
-        ).getString(key, NO_VALUE_PREF).toStrin
+        ).getString(key, NO_VALUE_PREF).toString()
+
+    }
+
+    fun setIntegerPref(context: Context, key: String, value: Int) {
+        context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE).edit()
+            .putInt(key, value)
+            .apply()
+    }
+
+    fun getIntegerPref(context: Context, key: String): Int {
+        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE)
+            .get

@@ -20,4 +20,16 @@ object SharedPref {
     private const val NO_VALUE_LONG = 0L
     //</editor-fold>
 
-    //<editor-fold desc="Get/Set/Clear Pr
+    //<editor-fold desc="Get/Set/Clear Pref">
+
+    fun setStringPref(context: Context, key: String, value: String) {
+        context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE).edit()
+            .putString(key, value)
+            .apply()
+    }
+
+    fun getStringPref(context: Context, key: String): String {
+        return context.getSharedPreferences(
+            EVENTERS_PREFERENCE,
+            Context.MODE_PRIVATE
+        ).getString(key, NO_VALUE_PREF).toStrin

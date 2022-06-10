@@ -44,4 +44,15 @@ object SharedPref {
 
     fun getIntegerPref(context: Context, key: String): Int {
         return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE)
-            .get
+            .getInt(key, NO_VALUE)
+    }
+
+    fun setLongPref(context: Context, key: String, value: Long) {
+        context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE).edit()
+            .putLong(key, value)
+            .apply()
+    }
+
+    fun getLongPref(context: Context, key: String): Long {
+        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE)
+      

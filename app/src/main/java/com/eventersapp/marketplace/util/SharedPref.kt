@@ -55,4 +55,14 @@ object SharedPref {
 
     fun getLongPref(context: Context, key: String): Long {
         return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE)
-      
+            .getLong(key, NO_VALUE_LONG)
+    }
+
+    fun setBooleanPref(context: Context, key: String, value: Boolean) {
+        context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE).edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
+    fun getBooleanPref(context: Context, key: String): Boolean {
+        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRI

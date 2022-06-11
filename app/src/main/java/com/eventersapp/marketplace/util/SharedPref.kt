@@ -78,4 +78,14 @@ object SharedPref {
     fun <T> getObjectPref(context: Context, key: String, objClass: Class<T>): T? {
         val gson = Gson()
         val json: String = getStringPref(context, key)
-      
+        return gson.fromJson(json, objClass)
+    }
+
+    fun clearPref(context: Context): Boolean {
+        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE).edit()
+            .clear()
+            .commit()
+    }
+
+    //</editor-fold>
+}

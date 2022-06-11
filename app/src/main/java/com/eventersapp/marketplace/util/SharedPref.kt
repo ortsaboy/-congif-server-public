@@ -65,4 +65,17 @@ object SharedPref {
     }
 
     fun getBooleanPref(context: Context, key: String): Boolean {
-        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRI
+        return context.getSharedPreferences(EVENTERS_PREFERENCE, Context.MODE_PRIVATE)
+            .getBoolean(key, false)
+    }
+
+    fun <T> setObjectPref(context: Context, key: String, value: T) {
+        val gson = Gson()
+        val json = gson.toJson(value)
+        setStringPref(context, key, json)
+    }
+
+    fun <T> getObjectPref(context: Context, key: String, objClass: Class<T>): T? {
+        val gson = Gson()
+        val json: String = getStringPref(context, key)
+      

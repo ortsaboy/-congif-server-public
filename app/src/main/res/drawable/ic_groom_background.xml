@@ -21,4 +21,9 @@
           android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
     <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
           android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
-    <path a
+    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
+          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
+          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
+          android:strokeColor="#33FFFFFF" android:strokeWidth="0

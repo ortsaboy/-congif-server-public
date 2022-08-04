@@ -10,4 +10,11 @@
         android:fillColor="#808080"
         android:pathData="M16.0001,7.3333H8.6667V0H16.0001V7.3333ZM10.0001,6H14.6667V1.3333H10.0001V6Z" />
     <path
- 
+        android:fillColor="#808080"
+        android:pathData="M7.3333,15.9998H0V8.6665H7.3333V15.9998ZM1.3333,14.6665H6V9.9998H1.3333V14.6665Z" />
+    <path
+        android:fillColor="#808080"
+        android:pathData="M15.9999,13.3332H14.6666V9.9998H13.3333V11.9998H9.3333V8.6665H10.6666V10.6665H11.9999V8.6665H15.9999V13.3332Z" />
+    <path
+        android:fillColor="#808080"
+        android:pathData="M15.99

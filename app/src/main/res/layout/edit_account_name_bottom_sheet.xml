@@ -13,4 +13,14 @@
 
         <TextView
             android:id="@+id/text_label_edit_account_name"
-            styl
+            style="@style/TextViewTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Edit Account Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_close_bottom_sheet"
+            an

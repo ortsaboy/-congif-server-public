@@ -32,4 +32,16 @@
             android:paddingTop="8dp"
             android:paddingEnd="12dp"
             android:paddingBottom="8dp"
-            andro
+            android:text="X"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_label_edit_account_name" />
+
+
+        <TextView
+            android:id="@+id/text_account_name"
+            style="@style/TextViewFormStyle"
+            android:layout_width="wrap_content"
+            and

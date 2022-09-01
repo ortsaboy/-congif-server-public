@@ -23,4 +23,13 @@
 
         <TextView
             android:id="@+id/text_close_bottom_sheet"
-            an
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_oval_bg"
+            android:fontFamily="@font/calibri"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp"
+            andro

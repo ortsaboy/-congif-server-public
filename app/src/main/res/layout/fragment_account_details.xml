@@ -7,4 +7,16 @@
 
         <variable
             name="viewmodel"
-            type="com.eventersapp.mark
+            type="com.eventersapp.marketplace.ui.viewmodel.AccountDetailsViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+ 

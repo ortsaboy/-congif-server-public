@@ -42,4 +42,14 @@
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"
                         android:layout_width="match_parent"
-                        android:layou
+                        android:layout_height="?android:attr/actionBarSize"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"
+                        app:theme="@style/AppTheme.Toolbar" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                a

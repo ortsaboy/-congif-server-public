@@ -76,4 +76,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="Account Name"
-                    app:layout_const
+                    app:layout_constraintStart_toStartOf="@+id/text_recover_passphrase"
+                    app:layout_constraintTop_toBottomOf="@+id/text_recover_passphrase" />
+
+                <EditText
+                    android:id="@+id/input_account_name"
+                    style="@style/EditTextFormStyle"
+                    android:layout_width="match_parent"
+                    andro

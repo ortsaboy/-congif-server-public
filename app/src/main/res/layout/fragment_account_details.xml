@@ -83,4 +83,12 @@
                     android:id="@+id/input_account_name"
                     style="@style/EditTextFormStyle"
                     android:layout_width="match_parent"
-                    andro
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:hint="Please name your account"
+                    android:text="@={viewmodel.accountName}"
+                    android:textColorHint="#bdbdbd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                   

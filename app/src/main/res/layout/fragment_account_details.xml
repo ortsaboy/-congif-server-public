@@ -108,4 +108,10 @@
                     app:layout_constraintWidth_percent="0.8" />
 
 
-            </androidx.constraintla
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

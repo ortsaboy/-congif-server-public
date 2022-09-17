@@ -51,4 +51,12 @@
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_t
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_constraint_layout">
+
+                    <TextView
+                        android:id="@+id/text_add_new_account"
+                        style="@style/TextViewTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        a

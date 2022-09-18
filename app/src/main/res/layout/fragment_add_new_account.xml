@@ -59,4 +59,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        a
+                        android:layout_marginTop="64dp"
+                        android:text="Add new account"
+                        android:textSize="28sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_manage_assets"
+                        style=

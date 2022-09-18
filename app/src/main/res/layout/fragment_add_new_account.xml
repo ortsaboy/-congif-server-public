@@ -73,4 +73,11 @@
                         android:layout_marginTop="16dp"
                         android:text="Manage all assets from one app"
                         android:textColor="@color/gray"
-                        app:layout_constraintSt
+                        app:layout_constraintStart_toStartOf="@+id/text_add_new_account"
+                        app:layout_constraintTop_toBottomOf="@+id/text_add_new_account" />
+
+                    <Button
+                        android:id="@+id/button_create_account"
+                        style="@style/ButtonActionStyle"
+                        android:layout_width="match_parent"
+                        android:l

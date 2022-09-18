@@ -67,4 +67,10 @@
 
                     <TextView
                         android:id="@+id/text_manage_assets"
-                        style=
+                        style="@style/TextViewSimpleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Manage all assets from one app"
+                        android:textColor="@color/gray"
+                        app:layout_constraintSt

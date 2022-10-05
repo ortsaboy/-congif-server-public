@@ -68,4 +68,12 @@
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
                         app:contentPadding="8dp"
-     
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                androi

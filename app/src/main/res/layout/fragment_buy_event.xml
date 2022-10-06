@@ -76,4 +76,10 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                androi
+                                android:id="@+id/text_event_title"
+                                style="@style/TextViewTitleStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+              

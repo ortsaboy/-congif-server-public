@@ -96,4 +96,10 @@
 
                             <ImageView
                                 android:id="@+id/image_event_image"
-                                android:layout_width=
+                                android:layout_width="0dp"
+                                android:layout_height="160dp"
+                                android:layout_marginTop="8dp"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_c

@@ -109,4 +109,9 @@
                                 android:id="@+id/text_event_description"
                                 style="@style/TextViewSimpleStyle"
                                 android:layout_width="match_parent"
-                                and
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/gray"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/image_event_image"
+                                tools:text="Justi

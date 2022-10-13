@@ -114,4 +114,14 @@
                                 android:textColor="@color/gray"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/image_event_image"
-                                tools:text="Justi
+                                tools:text="Justin Bieber on Tour" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/text_buy_normal_ticket"
+                        style="@style/TextViewTitleStyle"
+                        android:layout_width="wrap_content"
+                       

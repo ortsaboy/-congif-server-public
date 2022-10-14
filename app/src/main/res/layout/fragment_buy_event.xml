@@ -138,4 +138,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:textSize="16sp"
-                        app:layout_constraintStart_toStartOf="parent
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_buy_normal_ticket"
+                        tools:text="$ 200" />
+
+                    <TextView
+                        android:id="@+id/text_buy_ticket"
+                        style="@style/TextViewFormStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        andro

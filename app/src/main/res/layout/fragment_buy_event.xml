@@ -124,4 +124,11 @@
                         android:id="@+id/text_buy_normal_ticket"
                         style="@style/TextViewTitleStyle"
                         android:layout_width="wrap_content"
-                       
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Buy Normal Ticket"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_view_event_detail" />
+
+                    <TextVi

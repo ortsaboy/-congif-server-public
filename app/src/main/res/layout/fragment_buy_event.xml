@@ -147,4 +147,12 @@
                         style="@style/TextViewFormStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        andro
+                        android:background="@drawable/blue_rounded_bg"
+                        android:paddingStart="16dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="4dp"
+                        android:text="Buy"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+     

@@ -62,4 +62,10 @@
                     app:layout_constraintTop_toBottomOf="@id/toolbar_constraint_layout">
 
                     <TextView
-                        and
+                        android:id="@+id/text_create_event"
+                        style="@style/TextViewTitleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Create Event"

@@ -105,4 +105,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
                                 android:layout_marginTop="4dp"
-                                a
+                                android:layout_marginEnd="4dp"
+                                android:drawableEnd="@drawable/ic_round_assignment"
+                                android:hint="Event Title"
+                                android:text="@={viewmodel.eventTitle}"
+                                android:textColorHint="#bdbdbd"
+                                app:layout_constraintEnd_toEndOf="parent"
+                           

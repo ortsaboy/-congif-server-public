@@ -122,4 +122,11 @@
                                 android:layout_marginTop="16dp"
                                 android:text="Event Description"
                                 app:layout_constraintStart_toStartOf="@+id/text_event_title"
-                                app:layout_constraintTop_toBottomOf="@+
+                                app:layout_constraintTop_toBottomOf="@+id/input_event_title" />
+
+                            <EditText
+                                android:id="@+id/input_event_description"
+                                style="@style/EditTextFormStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marg

@@ -149,3 +149,10 @@
                                 android:layout_marginTop="16dp"
                                 android:text="Total Tickets"
                                 app:layout_constraintStart_toStartOf="@+id/text_event_title"
+                                app:layout_constraintTop_toBottomOf="@+id/input_event_description" />
+
+                            <EditText
+                                android:id="@+id/input_total_tickets"
+                                style="@style/EditTextFormStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content

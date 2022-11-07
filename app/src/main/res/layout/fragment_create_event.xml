@@ -174,4 +174,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:text="Ticket Price"
-                                app:layout_constraintStart
+                                app:layout_constraintStart_toStartOf="@+id/text_event_title"
+                                app:layout_constraintTop_toBottomOf="@+id/input_total_tickets" />
+
+                            <EditText
+                                android:id="@+id/input_ticket_price"
+                                style="@style/EditTextFormStyle"
+                                android:layout_width="match_parent"
+            

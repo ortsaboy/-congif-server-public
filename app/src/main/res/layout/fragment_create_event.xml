@@ -193,4 +193,10 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/text_ticket_price" />
 
-              
+                            <TextView
+                                android:id="@+id/text_ticket_image"
+                                style="@style/TextViewFormStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android

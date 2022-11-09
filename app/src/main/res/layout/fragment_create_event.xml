@@ -181,4 +181,10 @@
                                 android:id="@+id/input_ticket_price"
                                 style="@style/EditTextFormStyle"
                                 android:layout_width="match_parent"
-            
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:drawableEnd="@drawable/ic_round_attach_money"
+                                android:hint="Ticket Price"
+        

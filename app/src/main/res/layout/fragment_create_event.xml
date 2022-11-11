@@ -206,4 +206,10 @@
                             <ImageView
                                 android:id="@+id/image_add_ticket"
                                 android:layout_width="100dp"
-                
+                                android:layout_height="100dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/light_gray_rounded_bg_16r"
+                                android:padding="16dp"
+                                android:src="@drawable/ic_add"
+             

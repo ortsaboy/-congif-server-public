@@ -246,4 +246,12 @@
                     </androidx.cardview.widget.CardView>
 
 
-                </androidx.constraintlayout.widget.Const
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

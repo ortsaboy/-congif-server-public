@@ -128,3 +128,33 @@
                 android:text="Account Settings"
                 android:textColor="#808080"
                 app:drawableEndCompat="@drawable/ic_baseline_arrow_right" />
+
+
+            <TextView
+                android:id="@+id/text_contact"
+                style="@style/TextViewHeaderStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Help / Contact us"
+                android:textColor="#808080"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_right" />
+
+            <TextView
+                android:id="@+id/text_logout"
+                style="@style/TextViewHeaderStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{viewmodel::onLogoutButtonClick}"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Logout"
+                android:textColor="#f98a75"
+                app:drawableRightCompat="@drawable/ic_baseline_arrow_right" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

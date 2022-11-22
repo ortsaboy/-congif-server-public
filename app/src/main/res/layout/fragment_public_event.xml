@@ -34,4 +34,14 @@
                     android:text="Public Event"
                     android:textSize="20sp" />
 
-            </androidx.ap
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/event_tabs"
+                style="@style/CustomTab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?actionBarSize"
+                app:tabBackground="@color/white"
+                app:tabGravity="fill"
+          

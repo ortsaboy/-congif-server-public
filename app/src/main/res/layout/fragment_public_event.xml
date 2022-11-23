@@ -44,4 +44,13 @@
                 android:minHeight="?actionBarSize"
                 app:tabBackground="@color/white"
                 app:tabGravity="fill"
-          
+                app:tabIndicatorColor="@color/colorPrimaryDark"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorPrimaryDark"
+                app:tabTextColor="#828282" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:backgrou

@@ -36,4 +36,13 @@
                     app:elevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        app:popupTheme="@style/AppTheme.PopupOverlay"
+                        app:theme="@style/AppTheme.Toolbar" />
+
+               

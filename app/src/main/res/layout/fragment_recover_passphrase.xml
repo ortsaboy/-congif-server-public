@@ -69,4 +69,10 @@
 
                 <TextView
                     android:id="@+id/text_label_recover_account_from_passphrase"
-  
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/calibri"
+                    android:text="Recover an account with a 25-word passphrase"
+                    app:layout_constraintStart_toStartOf="@+id/text_recover_passphrase"
+           

@@ -75,4 +75,13 @@
                     android:fontFamily="@font/calibri"
                     android:text="Recover an account with a 25-word passphrase"
                     app:layout_constraintStart_toStartOf="@+id/text_recover_passphrase"
-           
+                    app:layout_constraintTop_toBottomOf="@+id/text_recover_passphrase" />
+
+                <TextView
+                    android:id="@+id/text_account_name"
+                    style="@style/TextViewFormStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Name"
+        

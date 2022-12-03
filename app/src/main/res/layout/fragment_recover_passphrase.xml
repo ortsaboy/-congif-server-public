@@ -107,4 +107,12 @@
                     style="@style/TextViewFormStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin
+                    android:layout_marginTop="16dp"
+                    android:text="Passphrase"
+                    app:layout_constraintStart_toStartOf="@+id/text_recover_passphrase"
+                    app:layout_constraintTop_toBottomOf="@+id/input_account_name" />
+
+                <EditText
+                    android:id="@+id/input_passphrase"
+                    style="@style/EditTextFormStyle"
+                    android:layout_width=

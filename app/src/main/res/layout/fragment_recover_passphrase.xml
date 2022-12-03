@@ -98,4 +98,13 @@
                     android:hint="Please name your account"
                     android:text="@={viewmodel.name}"
                     android:textColorHint="#bdbdbd"
-                    app:layout_constraintEnd_toEndOf="pare
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_account_name" />
+
+                <TextView
+                    android:id="@+id/text_passphrase"
+                    style="@style/TextViewFormStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin

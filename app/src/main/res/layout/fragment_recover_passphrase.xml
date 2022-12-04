@@ -123,4 +123,13 @@
                     android:gravity="top"
                     android:hint="Enter Passphrase"
                     android:inputType="textMultiLine"
-              
+                    android:lines="5"
+                    android:text="@={viewmodel.passphrase}"
+                    app:layout_constraintEnd_toStartOf="@+id/image_scan_qr_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_passphrase" />
+
+
+                <ImageView
+                    android:id="@+id/image_scan_qr_code"
+         

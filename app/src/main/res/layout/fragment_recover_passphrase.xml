@@ -138,4 +138,13 @@
                     android:onClick="@{viewmodel::onScanButtonClick}"
                     android:padding="12dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id
+                    app:layout_constraintTop_toTopOf="@+id/input_passphrase"
+                    app:srcCompat="@drawable/ic_scan"
+                    app:tint="@color/black" />
+
+                <Button
+                    android:id="@+id/button_verify"
+                    style="@style/ButtonActionStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginT

@@ -147,4 +147,13 @@
                     style="@style/ButtonActionStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginT
+                    android:layout_marginTop="48dp"
+                    android:onClick="@{viewmodel::onVerifyButtonClick}"
+                    android:text="Verify"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/input_passphrase"
+                    app:layout_constraintWidth_percent="0.8" />
+
+
+           

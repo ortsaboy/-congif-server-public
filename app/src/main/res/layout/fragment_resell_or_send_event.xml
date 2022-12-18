@@ -77,4 +77,10 @@
                         android:layout_marginTop="16dp"
                         app:cardCornerRadius="4dp"
                         app:cardElevation="4dp"
-                 
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/text_label_resell_or_send_event"
+                        app:layout_constraintTop_toBottomOf="@+id/text_label_resell_or_send_event">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_w

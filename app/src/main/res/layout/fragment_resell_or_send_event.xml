@@ -83,4 +83,13 @@
                         app:layout_constraintTop_toBottomOf="@+id/text_label_resell_or_send_event">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_w
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/text_event_title"
+                                style="@style/TextViewFormStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+             

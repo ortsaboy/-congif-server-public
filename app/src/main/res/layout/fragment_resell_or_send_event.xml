@@ -112,4 +112,10 @@
                                 android:hint="Event Title"
                                 android:text="@={viewmodel.eventTitle}"
                                 android:textColorHint="#bdbdbd"
-        
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_event_title" />
+
+                            <TextView
+                                android:id="@+id/text_event_description"
+                                style="@style/Tex

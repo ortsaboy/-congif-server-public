@@ -26,4 +26,11 @@
 
 
             <TextView
-                android:id="
+                android:id="@+id/text_account_name"
+                style="@style/TextViewSimpleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radio_button_select_account"
+                app:layout_cons

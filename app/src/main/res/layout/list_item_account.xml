@@ -33,4 +33,14 @@
                 android:layout_marginStart="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/radio_button_select_account"
-                app:layout_cons
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Account 1" />
+
+
+            <ImageView
+                android:id="@+id/image_more_actions"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_more_horiz"
+                app:layout_constraintBottom_toBottomOf="@+id/text_account_name"
+         

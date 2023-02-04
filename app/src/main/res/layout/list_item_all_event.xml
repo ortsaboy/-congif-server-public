@@ -52,4 +52,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
-                tools:text="19-Jun-2020, 03
+                tools:text="19-Jun-2020, 03:25 PM" />
+
+
+            <ImageView
+                android:id="@+id/image_event_image"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/eventers_logo" />
+
+            <TextView
+                android:id="@+id/text_event_description"
+                style="@style/TextViewSimpleStyle"
+    

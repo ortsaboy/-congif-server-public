@@ -33,4 +33,12 @@
                     android:layout_weight="80"
                     tools:text="Concert - Justin Bieber" />
 
-  
+                <TextView
+                    android:id="@+id/text_ticket_price"
+                    style="@style/TextViewHeaderStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:textColor="@color/colorAccent"
+                  

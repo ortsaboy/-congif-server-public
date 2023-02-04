@@ -65,4 +65,14 @@
             <TextView
                 android:id="@+id/text_event_description"
                 style="@style/TextViewSimpleStyle"
-    
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gray"
+                tools:text="Justin Bieber on Tour" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

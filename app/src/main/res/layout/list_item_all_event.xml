@@ -41,4 +41,15 @@
                     android:layout_weight="20"
                     android:gravity="end"
                     android:textColor="@color/colorAccent"
-                  
+                    tools:text="$ 180" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_date_time"
+                style="@style/TextViewFormStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                tools:text="19-Jun-2020, 03

@@ -26,4 +26,12 @@
                 android:gravity="center_horizontal"
                 android:padding="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
-          
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="foil" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

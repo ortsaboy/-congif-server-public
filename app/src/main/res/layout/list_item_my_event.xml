@@ -54,4 +54,14 @@
 
                 <TextView
                     android:id="@+id/text_event_id_date_time"
-    
+                    style="@style/TextViewFormStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    tools:text="#123 | 19-Jun-2020, 03:25 PM" />
+
+
+                <TextView
+                    android:id="@+id/text_status"
+                    style="@style/TextViewFormStyle"
+                    android:l

@@ -64,4 +64,16 @@
                 <TextView
                     android:id="@+id/text_status"
                     style="@style/TextViewFormStyle"
-                    android:l
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    tools:text="ACTIVE" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+i

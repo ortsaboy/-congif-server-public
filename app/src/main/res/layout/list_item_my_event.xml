@@ -76,4 +76,12 @@
 
 
             <ImageView
-                android:id="@+i
+                android:id="@+id/image_event_image"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/text_event_description"
+                style="@style/TextViewSimpleStyle"
+                android:layout_width="match_parent"

@@ -30,4 +30,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Account 1" />
 
-        </andr
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

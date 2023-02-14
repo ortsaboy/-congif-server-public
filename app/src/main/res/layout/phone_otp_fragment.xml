@@ -26,4 +26,12 @@
                 android:paddingBottom="16dp">
 
 
-                <ImageV
+                <ImageView
+                    android:id="@+id/image_lock"
+                    android:layout_width="76dp"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="72dp"
+                    android:src="@drawable/lock_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout

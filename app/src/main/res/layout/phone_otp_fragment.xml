@@ -51,4 +51,11 @@
 
                 <TextView
                     android:id="@+id/text_code_sent"
-                    style="@style/TextVi
+                    style="@style/TextViewSimpleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="A code that has been sent on phone"
+                    android:textColor="#808080"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_const

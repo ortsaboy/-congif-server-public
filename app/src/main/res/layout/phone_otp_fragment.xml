@@ -89,4 +89,13 @@
                         android:padding="8dp"
                         android:text="@={viewmodel.otpDigit1}"
                         android:textAlignment="center"
-                        android:textColor="@c
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/input_otp_box_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marg

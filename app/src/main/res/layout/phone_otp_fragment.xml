@@ -105,4 +105,13 @@
                         android:importantForAutofill="no"
                         android:inputType="number"
                         android:maxLength="1"
+                        android:padding="8dp"
+                        android:text="@={viewmodel.otpDigit2}"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/input_otp_box_3"
                      

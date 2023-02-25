@@ -144,4 +144,13 @@
                         android:inputType="number"
                         android:maxLength="1"
                         android:padding="8dp"
-                        android:text=
+                        android:text="@={viewmodel.otpDigit4}"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/input_otp_box_5"
+                        android:layout_width="0dp"
+                      

@@ -153,4 +153,10 @@
                     <EditText
                         android:id="@+id/input_otp_box_5"
                         android:layout_width="0dp"
-                      
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="16.66"
+                        android:background="@drawable/white_bg_light_gray_border_8r"
+                        android:fontFamily="@font/calibri"
+                        android:im

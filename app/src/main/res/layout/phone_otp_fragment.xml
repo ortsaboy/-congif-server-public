@@ -159,4 +159,12 @@
                         android:layout_weight="16.66"
                         android:background="@drawable/white_bg_light_gray_border_8r"
                         android:fontFamily="@font/calibri"
-                        android:im
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:padding="8dp"
+                        android:text="@={viewmodel.otpDigit5}"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+        

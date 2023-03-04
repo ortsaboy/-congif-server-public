@@ -198,4 +198,12 @@
                     android:text="Didn\'t receive code?"
                     android:textColor="#808080"
                     app:layout_constraintEnd_toEndOf="parent"
-             
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_layout_otp" />
+
+                <TextView
+                    android:id="@+id/text_resend_code"
+                    style="@style/TextViewHeaderStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layou

@@ -191,4 +191,11 @@
 
                 <TextView
                     android:id="@+id/text_did_not_receive_code"
-               
+                    style="@style/TextViewSimpleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:text="Didn\'t receive code?"
+                    android:textColor="#808080"
+                    app:layout_constraintEnd_toEndOf="parent"
+             

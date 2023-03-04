@@ -212,4 +212,13 @@
                     android:textColor="@color/colorAccent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_did_not_receive_co
+                    app:layout_constraintTop_toBottomOf="@+id/text_did_not_receive_code" />
+
+                <Button
+                    android:id="@+id/button_submit"
+                    style="@style/ButtonActionStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:onClick="@{viewmodel::onSubmitButtonClick}"
+               

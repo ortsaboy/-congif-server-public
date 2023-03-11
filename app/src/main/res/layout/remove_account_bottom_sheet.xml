@@ -14,4 +14,15 @@
             android:layout_height="wrap_content"
             android:text="Remove Account"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="pa
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_delete"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/blue_rounded_bg_24r"
+            android:backgroundTint="@color/transparent_red"
+            android:padding="16dp"
+         

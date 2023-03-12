@@ -50,4 +50,13 @@
             android:id="@+id/button_remove_account"
             style="@style/ButtonActionStyle"
             android:layout_width="0dp"
-            android:lay
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Remove Account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_remove_account" />
+
+        <Button
+            android:id="@+id/button_keep_it"
+            style="@style/ButtonActionCancel

@@ -59,4 +59,12 @@
 
         <Button
             android:id="@+id/button_keep_it"
-            style="@style/ButtonActionCancel
+            style="@style/ButtonActionCancelStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Keep it"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_remove_account" />
+    </androidx.constraint

@@ -16,4 +16,14 @@
             android:layout_marginTop="8dp"
             android:text="Passphrase QR"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toT
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_close_bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_oval_bg"
+            android:fontFamily="@font/calibri"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            an

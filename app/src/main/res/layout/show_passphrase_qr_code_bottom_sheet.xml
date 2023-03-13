@@ -26,4 +26,12 @@
             android:fontFamily="@font/calibri"
             android:gravity="center"
             android:paddingStart="12dp"
-            an
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp"
+            android:text="X"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_label_passphrase_q

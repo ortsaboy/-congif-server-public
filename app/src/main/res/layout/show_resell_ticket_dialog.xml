@@ -23,3 +23,14 @@
         android:layout_marginTop="24dp"
         android:text="Resell Amount"
         app:layout_constraintStart_toStartOf="@+id/text_enter_resell_amount"
+        app:layout_constraintTop_toBottomOf="@+id/text_enter_resell_amount" />
+
+    <EditText
+        android:id="@+id/input_resell_amount"
+        style="@style/EditTextFormStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="Resell Amount"
+        android:inputType="numberSigned"
+        and

@@ -62,4 +62,8 @@
             android:text="Share QR"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app
+            app:layout_constraintTop_toBottomOf="@+id/image_qr_code" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

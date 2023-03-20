@@ -11,4 +11,14 @@
 
         <TextView
             android:id="@+id/text_label_qr_code_scan_result"
-            style="@style/TextViewTitl
+            style="@style/TextViewTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Scan Result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_close_bottom_sheet"
+            android:la

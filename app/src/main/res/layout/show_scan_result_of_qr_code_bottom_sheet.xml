@@ -31,4 +31,13 @@
             android:paddingEnd="12dp"
             android:paddingBottom="8dp"
             android:text="X"
- 
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_label_qr_code_scan_result" />
+
+        <TextView
+            android:id="@+id/text_scan_result"
+            style="@style/TextViewSimpleStyle"
+            android:layout_

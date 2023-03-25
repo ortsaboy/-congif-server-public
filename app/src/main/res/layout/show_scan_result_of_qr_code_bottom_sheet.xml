@@ -40,4 +40,12 @@
         <TextView
             android:id="@+id/text_scan_result"
             style="@style/TextViewSimpleStyle"
-            android:layout_
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/white_bg_light_gray_border_24r"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="
